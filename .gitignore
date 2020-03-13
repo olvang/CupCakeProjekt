@@ -108,6 +108,7 @@ $RECYCLE.BIN/
 .idea/**/dictionaries
 .idea/**/shelf
 .idea/workspace.xml
+.idea/compiler.xml
 .idea/*
 
 # Generated files

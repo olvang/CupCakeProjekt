@@ -1,27 +1,17 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html lang="en">
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Olsker Cupcakes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<%!
-    @Override
-    public void jspInit() {
-        //TODO initialiser bund og top liste
-    }
-%>
-<%
-    //TODO læg listerne i requestscope
-%>
-
 <div class="outer">
     <div class="pagecontainer main border rounded ">
-        <h1 class="title">Velkommen ombord! </h1>
+        <h1 class="title">Velkommen ombord!</h1>
         <h2 class="subtitle">Øens bedste cupcakes. Vælg og bestil her:</h2>
 
         <div class="container">
@@ -30,30 +20,22 @@
                 <div class="form-row align-items-center">
                     <div class="col-lg-4 my-1">
                         <label class="mr-md-3" for="bottoms">Bund</label>
-                        <select class="custom-select mb-4" id="bottoms">
+                        <select class="custom-select mb-4 box" id="bottoms">
                             <option selected disabled>Vælg...</option>
-                            <!-- TODO læg alle bunde i en liste kaldt bottoms, i requestScope -->
-                            <c: forEach var="bottom" items="${bottoms}">
-                                <option value="${bottom}">${bottom}</option>
-                            </c:>
-                            <%--<option value="Chocolate">Chocolate</option>
+                            <option value="Chocolate">Chocolate</option>
                             <option value="Vanilla">Vanilla</option>
                             <option value="Nutmeg">Nutmeg</option>
-                            <option value="Pistacio">Pistacio</option>--%>
+                            <option value="Pistacio">Pistacio</option>
                         </select>
                     </div>
                     <div class="col-lg-4 my-1">
                         <label class="mr-md-3" for="bottoms">Topping</label>
-                        <select class="custom-select mb-4" id="toppings">
+                        <select class="custom-select mb-4 box" id="toppings">
                             <option selected disabled>Vælg...</option>
-                            <!-- TODO læg alle toppe i en liste kaldt toppings, i requestScope -->
-                            <c: forEach var="topping" items="${toppings}">
-                                <option value="${topping}">${topping}</option>
-                            </c:>
-                            <%--<option value="Chocolate">Chocolate</option>
+                            <option value="Chocolate">Chocolate</option>
                             <option value="Blueberry">Blueberry</option>
                             <option value="Rasberry">Rasberry</option>
-                            <option value="Crispy">Crispy</option>--%>
+                            <option value="Crispy">Crispy</option>
                         </select>
                     </div>
                     <div class="col-lg-4 my-1">
