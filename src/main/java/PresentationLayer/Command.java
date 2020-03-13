@@ -16,7 +16,7 @@ abstract class Command {
     }
 
     static Command from( HttpServletRequest request ) {
-        String TagetName = request.getParameter( "taget" );
+        String TagetName = request.getParameter( "target" );
         if ( commands == null ) {
             initCommands();
         }
