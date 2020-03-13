@@ -1,0 +1,10 @@
+body {
+    background-color: #ECEEEF;
+}
+
+.pagecontainer {
+    background-color: white;
+    border-color: #919191;
+    border-radius: 5px;
+    padding: 5px;
+}

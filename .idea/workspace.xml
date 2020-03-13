@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="371db706-c948-41ec-bcf3-c4be48b313cb" name="Default Changelist" comment="" />
+    <list default="true" id="371db706-c948-41ec-bcf3-c4be48b313cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -25,10 +43,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RunManager">
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.511" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Cupcake_Projekt_war/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Cupcake Projekt:war">
@@ -124,6 +142,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583929234264</updated>
       <workItem from="1583929235676" duration="73000" />
+      <workItem from="1584083440795" duration="4314000" />
     </task>
     <servers />
   </component>
@@ -131,10 +150,19 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="304" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583929307535">
-      <screen x="0" y="23" width="1680" height="956" />
+    <state x="637" y="255" key="#Tomcat_Server" timestamp="1584095157338">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
+    <state x="637" y="255" key="#Tomcat_Server/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584095157338" />
+    <state x="499" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584095172572">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="499" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584095172572" />
     <state x="304" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.956@0.23.1680.956" timestamp="1583929307535" />
+    <state x="825" y="338" key="FileChooserDialogImpl" timestamp="1584095156362">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="825" y="338" key="FileChooserDialogImpl/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584095156362" />
     <state width="1638" height="256" key="GridCell.Tab.0.bottom" timestamp="1583929306591">
       <screen x="0" y="23" width="1680" height="956" />
     </state>
@@ -151,5 +179,9 @@
       <screen x="0" y="23" width="1680" height="956" />
     </state>
     <state width="1638" height="256" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1583929306590" />
+    <state x="1485" y="633" key="com.intellij.ide.util.TipDialog" timestamp="1584083440742">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1485" y="633" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584083440742" />
   </component>
 </project>
