@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  The purpose of UserMapper is to...
@@ -18,7 +19,7 @@ public class UserMapper {
     public static void createUser( User user ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO Users (email, password, role) VALUES (?, ?, ?)";
+            String SQL = "INSERT INTO users (email, password, role) VALUES (?, ?, ?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setString( 1, user.getEmail() );
             ps.setString( 2, user.getPassword() );
@@ -36,7 +37,7 @@ public class UserMapper {
     public static User login( String email, String password ) throws LoginSampleException {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT id, role FROM Users "
+            String SQL = "SELECT id, role, balance FROM Users "
                     + "WHERE email=? AND password=?";
             PreparedStatement ps = con.prepareStatement( SQL );
             ps.setString( 1, email );
@@ -45,7 +46,8 @@ public class UserMapper {
             if ( rs.next() ) {
                 String role = rs.getString( "role" );
                 int id = rs.getInt( "id" );
-                User user = new User( email, password, role );
+                double balance = rs.getDouble("balance");
+                User user = new User( email, password, role, balance );
                 user.setId( id );
                 return user;
             } else {
@@ -54,6 +56,19 @@ public class UserMapper {
         } catch ( ClassNotFoundException | SQLException ex ) {
             throw new LoginSampleException(ex.getMessage());
         }
+    }
+
+    public User getUser(int userID){
+        return null;
+    }
+
+    public ArrayList<User> getAllCustomers(){
+
+        return null;
+    }
+
+    public void updateUser(int userID){
+
     }
 
 }
