@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="371db706-c948-41ec-bcf3-c4be48b313cb" name="Default Changelist" comment="DBAccess skeleton setup">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DBAccess/CupCakeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DBAccess/OrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/CupCake.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/topAndBottoms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="371db706-c948-41ec-bcf3-c4be48b313cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/AddToOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/MyOrders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/Pay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/deleteFromOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/getAllCustomers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/getAllOrders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/getCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/removeOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/showBasket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/showFrontPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/updateOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/updateUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/viewOrder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DBAccess/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DBAccess/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/LogicFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/LogicFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/topAndBottoms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/topAndBottoms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/FrontController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/FrontController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/Register.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +111,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.511" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Cupcake Projekt:war">
@@ -207,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584096822907</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Skeleton Setup, not completed">
+      <created>1584098734725</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584098734725</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +245,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="intelliJ added to .gitignore" />
     <MESSAGE value="Removed template files not needed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed template files not needed" />
+    <MESSAGE value="Skeleton Setup, not completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Skeleton Setup, not completed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="637" y="255" key="#Tomcat_Server" timestamp="1584095157338">

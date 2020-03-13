@@ -1,5 +1,7 @@
 package FunctionLayer;
 
+import java.util.ArrayList;
+
 /**
  * The purpose of User is to...
  * @author kasper
@@ -51,6 +53,19 @@ public class User {
         this.id = id;
     }
 
+    public ArrayList<Order> getUserOrders(int userID){
+        return null;
+    }
 
+    public User updateUser(int userID){
+        return null;
+    }
 
+    public User getUser(int userID){
+        return null;
+    }
+
+    public ArrayList<User> getAllCustomers(){
+        return null;
+    }
 }
