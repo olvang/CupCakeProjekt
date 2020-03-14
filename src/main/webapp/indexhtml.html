@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    
+    <script src="https://kit.fontawesome.com/c97c9bd36e.js" crossorigin="anonymous"></script>
+
 </head>
-<body>
+<body class="d-flex flex-column">
 <div class="outer">
-    <div class="pagecontainer main border rounded ">
+    <div class="pagecontainer main border rounded mb-2">
         <h1 class="title">Velkommen ombord!</h1>
         <h2 class="subtitle">Øens bedste cupcakes. Vælg og bestil her:</h2>
 
-        <div class="container">
+        <div class="container flex-fill">
             <form name="addToOrder" action="FrontController" method="POST">
                 <input type="hidden" name="target" value="addToOrder">
                 <div class="form-row align-items-center">
@@ -51,7 +54,11 @@
             </form>
         </div>
     </div>
+    
+    
 </div>
+    
+    
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

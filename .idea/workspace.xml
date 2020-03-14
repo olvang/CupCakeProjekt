@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="371db706-c948-41ec-bcf3-c4be48b313cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/AddToOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/MyOrders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/Pay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/deleteFromOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/getAllCustomers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/getAllOrders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/getCustomer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/removeOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/showBasket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/showFrontPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/updateOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/updateUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/viewOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/myorders.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/LogicFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/LogicFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/topAndBottoms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/topAndBottoms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/FrontController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/FrontController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/indexhtml.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/indexhtml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +56,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -196,6 +190,7 @@
       <updated>1583929234264</updated>
       <workItem from="1583929235676" duration="73000" />
       <workItem from="1584083440795" duration="4314000" />
+      <workItem from="1584222642596" duration="1594000" />
     </task>
     <task id="LOCAL-00001" summary="intelliJ added to .gitignore">
       <created>1584095712160</created>
@@ -225,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584098734725</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Skeleton Setup complete">
+      <created>1584115119989</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1584115119989</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +238,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -246,7 +250,8 @@
     <MESSAGE value="intelliJ added to .gitignore" />
     <MESSAGE value="Removed template files not needed" />
     <MESSAGE value="Skeleton Setup, not completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Skeleton Setup, not completed" />
+    <MESSAGE value="Skeleton Setup complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Skeleton Setup complete" />
   </component>
   <component name="WindowStateProjectService">
     <state x="637" y="255" key="#Tomcat_Server" timestamp="1584095157338">
