@@ -4,11 +4,45 @@ body {
     font-family: "Geneva", sans-serif;
 }
 
+/* Anything that only happens on desktop version goes here */
+@media screen and (min-width: 48em){
+    body{
+        text-align: left;
+    }
+
+    .title {
+        padding-left: 50pt;
+    }
+
+    .subtitle {
+        padding-left: 111pt;
+    }
+    #addtobasket {
+        float: right;
+        margin-right: 10pt;
+    }
+    .checkoutbutton {
+        margin-top: 50pt;
+    }
+}
+
+.checkoutbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pay {
+    height: 50pt;
+    width: 200pt;
+    font-size: 25pt;
+}
+
 footer {
   flex-grow: 0;
 }
         
-        body,html{
+body,html{
    height:100%;
 }
 
@@ -21,9 +55,9 @@ footer {
 
 .custom-select:focus,
 .form-control:focus {
-     border-color: #D1604D;
-     outline: 0;
-     box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 1);
+    border-color: #D1604D;
+    outline: 0;
+    box-shadow: 0px 0px 10px 0px rgba(209,96,77,1);
  }
 
 .container {
@@ -46,37 +80,87 @@ footer {
 .button {
     background-color: #D1604D;
     border-color: #D1604D;
-    width: 120pt;
     height: 35pt;
     margin-bottom: 10pt;
+    color: white;
 }
 
-@media screen and (min-width: 48em){
-    body{
-        text-align: left;
-    }
+.button:not(.btn-lg) {
+    width: 120pt;
+}
 
-    .title {
-        padding-left: 50pt;
-    }
+.buttonLogin {
+    float: right;
+}
 
-    .subtitle {
-        padding-left: 111pt;
-    }
-    #addtobasket {
-        float: right;
-        margin-right: 10pt;
-    }
+.button:hover {
+    background-color: #a3493b;
+    border-color: #D1604D;
+    color: white;
+}
+
+.pagination > .active > a {
+    background-color: #D1604D!Important;
+    border-color: #D1604D!Important;
 }
 
 .main {
     flex-grow: 1;
 }
+
 .cupcakedropdown {
     width: 200pt;
     height: fit-content;
 }
 
+.outerTable {
+    width: 100%;
+    margin: 20px auto;
+    table-layout: auto;
+    background-color: #FCFCFC;
+}
+
+.innerTable {
+    table-layout: auto;
+    background-color: #FCFCFC;
+    margin-left: 10px;
+}
+
+tr.border_bottom td {
+    border-bottom: 1pt solid #707070;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    padding-bottom: 1px;
+}
+
+tr.border_bottomOuter {
+    border-bottom: 2px solid #707070;
+}
+
+.tablehead {
+    background-color: #D1604D;
+    color: white;
+}
+
+.orderviewbutton {
+    text-align: center;
+}
+
+.orderOverview {
+
+}
+
+.orderHeaderBorder {
+    border-bottom: 2px solid #707070;
+}
+
+.cal-label {
+    /* TODO Den her skal få labelen på datovælgeren til at være ved siden af boksen, men jeg kan ikke få det til at virke */
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+}
 
 h1 {
     font-weight: bold;
@@ -89,4 +173,13 @@ p {
 h2 {
     font-weight: 500;
     font-size: 25pt;
+}
+
+.orderprice {
+    font-size: 25px;
+}
+
+.notSureWhatThisIsTBHUsedInLogin {
+    border-top: 1px solid #C4C4C4;
+    width:100%;
 }

@@ -63,6 +63,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 my-1">
+                        <!-- TODO tilføj "cupcake lagt i kurv" tekst -->
                         <input type="submit" class="btn btn-primary button" id="addtobasket" value="Føj til kurv">
                     </div>
                 </div>
