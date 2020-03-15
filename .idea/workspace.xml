@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="371db706-c948-41ec-bcf3-c4be48b313cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/Bottom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/Topping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/DBSetup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/DBSetup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL/DBTestData.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/DBTestData.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DBAccess/CupCakeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DBAccess/CupCakeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/topAndBottoms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/TopAndBottoms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/deleteFromOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/DeleteFromOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/getAllCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/GetAllCustomers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/getAllOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/GetAllOrders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/getCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/GetCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/removeOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/RemoveOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/showBasket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/ShowBasket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/showFrontPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/ShowFrontPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/updateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/UpdateOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/updateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/UpdateUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/viewOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/ViewOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/TopAndBottoms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/TopAndBottoms.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,8 +48,8 @@
       <list>
         <option value="Jsp File" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,6 +91,18 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="FunctionLayer" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
@@ -193,6 +194,7 @@
       <workItem from="1584257164791" duration="923000" />
       <workItem from="1584268526995" duration="9197000" />
       <workItem from="1584290112958" duration="2491000" />
+      <workItem from="1584294372086" duration="474000" />
     </task>
     <task id="LOCAL-00001" summary="intelliJ added to .gitignore">
       <created>1584095712160</created>

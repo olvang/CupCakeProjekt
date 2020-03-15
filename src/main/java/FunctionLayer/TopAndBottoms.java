@@ -1,22 +1,27 @@
 package FunctionLayer;
 
 public class TopAndBottoms {
-    private String[] bottoms;
-    private String[] tops;
+    private Bottom bottoms;
+    private Topping toppings;
 
-    public String[] getBottoms() {
+    public TopAndBottoms(Bottom bottoms, Topping toppings) {
+        this.bottoms = bottoms;
+        this.toppings = toppings;
+    }
+
+    public Bottom getBottoms() {
         return bottoms;
     }
 
-    public void setBottoms(String[] bottoms) {
+    public void setBottoms(Bottom bottoms) {
         this.bottoms = bottoms;
     }
 
-    public String[] getTops() {
-        return tops;
+    public Topping getToppings() {
+        return toppings;
     }
 
-    public void setTops(String[] tops) {
-        this.tops = tops;
+    public void setToppings(Topping toppings) {
+        this.toppings = toppings;
     }
 }
