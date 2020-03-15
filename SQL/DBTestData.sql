@@ -5,12 +5,12 @@ INSERT INTO `olskercupcake`.`users` (`email`,`password`,`balance`) VALUES ('jens
 INSERT INTO `olskercupcake`.`users` (`email`,`password`,`balance`) VALUES ('pedersen@nowhere.com','c1234',40);
 INSERT INTO `olskercupcake`.`users` (`email`,`password`,`balance`) VALUES ('hansen@nowhere.com','d1234',4000);
 
-TRUNCATE TABLE cupcake_buttom;
-INSERT INTO `olskercupcake`.`cupcake_buttom` (`cb_price`,`cb_name`) VALUES (5.00,'Chocolate');
-INSERT INTO `olskercupcake`.`cupcake_buttom` (`cb_price`,`cb_name`) VALUES (5.00,'Vanilla');
-INSERT INTO `olskercupcake`.`cupcake_buttom` (`cb_price`,`cb_name`) VALUES (5.00,'Nutmeg');
-INSERT INTO `olskercupcake`.`cupcake_buttom` (`cb_price`,`cb_name`) VALUES (6.00,'Pistacio');
-INSERT INTO `olskercupcake`.`cupcake_buttom` (`cb_price`,`cb_name`) VALUES (7.00,'Almond');
+TRUNCATE TABLE cupcake_bottom;
+INSERT INTO `olskercupcake`.`cupcake_bottom` (`cb_price`,`cb_name`) VALUES (5.00,'Chocolate');
+INSERT INTO `olskercupcake`.`cupcake_bottom` (`cb_price`,`cb_name`) VALUES (5.00,'Vanilla');
+INSERT INTO `olskercupcake`.`cupcake_bottom` (`cb_price`,`cb_name`) VALUES (5.00,'Nutmeg');
+INSERT INTO `olskercupcake`.`cupcake_bottom` (`cb_price`,`cb_name`) VALUES (6.00,'Pistacio');
+INSERT INTO `olskercupcake`.`cupcake_bottom` (`cb_price`,`cb_name`) VALUES (7.00,'Almond');
 
 TRUNCATE TABLE cupcake_top;
 INSERT INTO `olskercupcake`.`cupcake_top` (`cp_price`,`cp_name`) VALUES (5.00,'Chocolate');

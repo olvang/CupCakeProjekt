@@ -5,11 +5,11 @@ import FunctionLayer.LoginSampleException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class showBasket extends Command{
+public class GetAllOrders extends Command{
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
-        return "basket";
+        return "admin/orders";
     }
 }

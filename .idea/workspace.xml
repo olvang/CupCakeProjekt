@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="371db706-c948-41ec-bcf3-c4be48b313cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/basket.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/myorders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/myorders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vieworder.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vieworder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/DBSetup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/DBSetup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL/DBTestData.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL/DBTestData.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DBAccess/CupCakeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DBAccess/CupCakeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/topAndBottoms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/TopAndBottoms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/deleteFromOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/DeleteFromOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/getAllCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/GetAllCustomers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/getAllOrders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/GetAllOrders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/getCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/GetCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/removeOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/RemoveOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/showBasket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/ShowBasket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/showFrontPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/ShowFrontPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/updateOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/UpdateOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/updateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/UpdateUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/viewOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/ViewOrder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +191,8 @@
       <workItem from="1584083440795" duration="4314000" />
       <workItem from="1584222642596" duration="1594000" />
       <workItem from="1584257164791" duration="923000" />
-      <workItem from="1584268526995" duration="9014000" />
+      <workItem from="1584268526995" duration="9197000" />
+      <workItem from="1584290112958" duration="2491000" />
     </task>
     <task id="LOCAL-00001" summary="intelliJ added to .gitignore">
       <created>1584095712160</created>
@@ -275,10 +285,10 @@
       <screen x="0" y="23" width="1680" height="956" />
     </state>
     <state width="1638" height="256" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1583929306590" />
-    <state x="1485" y="633" key="com.intellij.ide.util.TipDialog" timestamp="1584268529614">
+    <state x="1485" y="633" key="com.intellij.ide.util.TipDialog" timestamp="1584290107927">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1485" y="633" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584268529614" />
+    <state x="1485" y="633" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584290107927" />
     <state x="1091" y="619" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584270311129">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

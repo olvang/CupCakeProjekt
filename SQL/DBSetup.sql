@@ -43,7 +43,7 @@ CREATE TABLE `cupcake_top` (
   `cp_name` VARCHAR(45) UNIQUE NOT NULL
 );
 
-CREATE TABLE `cupcake_buttom` (
+CREATE TABLE `cupcake_bottom` (
   `cb_id` int PRIMARY KEY AUTO_INCREMENT,
   `cb_price` double NOT NULL,
   `cb_name` VARCHAR(45) UNIQUE NOT NULL

@@ -1,6 +1,6 @@
 package FunctionLayer;
 
-public class topAndBottoms {
+public class TopAndBottoms {
     private String[] bottoms;
     private String[] tops;
 
