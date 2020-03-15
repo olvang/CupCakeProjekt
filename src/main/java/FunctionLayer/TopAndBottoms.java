@@ -1,27 +1,29 @@
 package FunctionLayer;
 
-public class TopAndBottoms {
-    private Bottom bottoms;
-    private Topping toppings;
+import java.util.ArrayList;
 
-    public TopAndBottoms(Bottom bottoms, Topping toppings) {
+public class TopAndBottoms {
+    private ArrayList<Bottom> bottoms;
+    private ArrayList<Topping> toppings;
+
+    public TopAndBottoms(ArrayList<Bottom> bottoms, ArrayList<Topping> toppings) {
         this.bottoms = bottoms;
         this.toppings = toppings;
     }
 
-    public Bottom getBottoms() {
+    public ArrayList<Bottom> getBottoms() {
         return bottoms;
     }
 
-    public void setBottoms(Bottom bottoms) {
+    public void setBottoms(ArrayList<Bottom> bottoms) {
         this.bottoms = bottoms;
     }
 
-    public Topping getToppings() {
+    public ArrayList<Topping> getToppings() {
         return toppings;
     }
 
-    public void setToppings(Topping toppings) {
+    public void setToppings(ArrayList<Topping> toppings) {
         this.toppings = toppings;
     }
 }

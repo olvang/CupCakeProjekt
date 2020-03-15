@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="371db706-c948-41ec-bcf3-c4be48b313cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/Bottom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/Topping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/TopAndBottoms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/TopAndBottoms.java" afterDir="false" />
     </list>
@@ -194,7 +192,7 @@
       <workItem from="1584257164791" duration="923000" />
       <workItem from="1584268526995" duration="9197000" />
       <workItem from="1584290112958" duration="2491000" />
-      <workItem from="1584294372086" duration="474000" />
+      <workItem from="1584294372086" duration="828000" />
     </task>
     <task id="LOCAL-00001" summary="intelliJ added to .gitignore">
       <created>1584095712160</created>
@@ -231,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584115119989</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Created classes for Bottoms and Toppings">
+      <created>1584294898772</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584294898772</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +260,8 @@
     <MESSAGE value="Removed template files not needed" />
     <MESSAGE value="Skeleton Setup, not completed" />
     <MESSAGE value="Skeleton Setup complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Skeleton Setup complete" />
+    <MESSAGE value="Created classes for Bottoms and Toppings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created classes for Bottoms and Toppings" />
   </component>
   <component name="WindowStateProjectService">
     <state x="637" y="255" key="#Tomcat_Server" timestamp="1584095157338">
