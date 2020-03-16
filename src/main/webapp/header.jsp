@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <script src="https://kit.fontawesome.com/c97c9bd36e.js" crossorigin="anonymous"></script>
 
 
@@ -8,17 +9,15 @@
 
     <nav class="navbar navbar-light mt-2 pagecontainer">
         <a href="index.jsp" class="navbar-text">Forside</a>
-        
         <div class="form-inline my-4 my-lg-0">
-        <c:choose>
-            <c:when test="${sessionScope.email == null}">
-                <a href="login.jsp" class= "navbar-text mr-sm-2">login / registrer</a>
-            </c:when>
-            <c:when test="${sessionScope.email != null}">
-                <p>${sessionScope.email}</p>
-            </c:when>
-
-        </c:choose>
+            <c:choose>
+                <c:when test="${sessionScope.email == null}">
+                    ${"<a href='login.jsp' class= 'navbar-text mr-sm-2'>Login / Registrer</a>"}
+                </c:when>
+                <c:otherwise>
+                   <p class='navbar-brand my-2 my-sm-0'> ${sessionScope.email}</p>
+                </c:otherwise>
+            </c:choose>
             <a class= "navbar-brand my-2 my-sm-0" href="basket.html">
                 <i class="fas fa-shopping-cart fa-lg"></i>
             </a>

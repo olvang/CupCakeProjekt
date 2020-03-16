@@ -3,6 +3,8 @@ package PresentationLayer;
 import FunctionLayer.LogicFacade;
 import FunctionLayer.LoginSampleException;
 import FunctionLayer.User;
+
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,10 +28,6 @@ public class Login extends Command {
         session.setAttribute( "role", user.isAdmin() );
         session.setAttribute("email", email);  // ellers skal man skrive  user.email på jsp siderne og det er sgu lidt mærkeligt at man har adgang til private felter. Men måske er det meget fedt , jeg ved det ikke
         session.setAttribute("balance", user.getBalance());
-        System.out.println(session.getAttribute("user"));
-        System.out.println(session.getAttribute("role"));
-        System.out.println(session.getAttribute("email"));
-        System.out.println(session.getAttribute("balance"));
 
         return "index";
     }

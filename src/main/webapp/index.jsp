@@ -19,7 +19,7 @@
 <%
     new ShowFrontPage().execute(request, response);
 %>
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="header.jsp" />
 <div class="outer">
     <div class="container pagecontainer main border rounded ">
         <h1 class="title">Velkommen ombord! </h1>
