@@ -21,8 +21,8 @@ public class UserMapperTest {
     private static Connection testConnection;
     private static String USER = "testinguser";
     private static String USERPW = "try1try2tryAgain";
-    private static String DBNAME = "useradminTest";
-    private static String HOST = "46.101.253.149";
+    private static String DBNAME = "OlskerCupcake";
+    private static String HOST = "localhost";
 
     @Before
     public void setUp() {
@@ -37,11 +37,11 @@ public class UserMapperTest {
                 Connector.setConnection( testConnection );
             }
             // reset test database
-            try ( Statement stmt = testConnection.createStatement() ) {
-                stmt.execute( "drop table if exists users" );
-                stmt.execute( "create table users like UsersTest" );
-                stmt.execute( "insert into users select * from UsersTest" );
-            }
+//            try ( Statement stmt = testConnection.createStatement() ) {
+//                stmt.execute( "drop table if exists users" );
+//                stmt.execute( "create table users like UsersTest" );
+//                stmt.execute( "insert into users select * from UsersTest" );
+//            }
 
         } catch ( ClassNotFoundException | SQLException ex ) {
             testConnection = null;
@@ -58,30 +58,30 @@ public class UserMapperTest {
     @Test
     public void testLogin01() throws LoginSampleException {
         // Can we log in
-        User user = UserMapper.login( "jens@somewhere.com", "jensen" );
+        User user = UserMapper.login( "someone@nowhere.com", "a1234" );
         assertTrue( user != null );
     }
 
     @Test( expected = LoginSampleException.class )
     public void testLogin02() throws LoginSampleException {
         // We should get an exception if we use the wrong password
-        User user = UserMapper.login( "jens@somewhere.com", "larsen" );
+        User user = UserMapper.login( "jensen@nowhere.com", "larsen" );
     }
 
     @Test
     public void testLogin03() throws LoginSampleException {
-        // Jens is supposed to be a customer
-        User user = UserMapper.login( "jens@somewhere.com", "jensen" );
-        assertEquals( "customer", user.getRole() );
+        // Hansen is supposed to be a customer
+        User user = UserMapper.login( "hansen@nowhere.com", "d1234" );
+        assertEquals( false, user.isAdmin() );
     }
 
     @Test
     public void testCreateUser01() throws LoginSampleException {
         // Can we create a new user - Notice, if login fails, this will fail
         // but so would login01, so this is OK
-        User original = new User( "king@kong.com", "uhahvorhemmeligt", "konge",0 );
+        User original = new User( "king@kong.com", "uhahvorhemmeligt", true,0 );
         UserMapper.createUser( original );
         User retrieved = UserMapper.login( "king@kong.com", "uhahvorhemmeligt" );
-        assertEquals( "konge", retrieved.getRole() );
+        assertEquals( true, retrieved.isAdmin() );
     }
 }

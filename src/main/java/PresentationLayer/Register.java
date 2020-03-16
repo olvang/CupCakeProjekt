@@ -20,7 +20,7 @@ public class Register extends Command {
 
             session.setAttribute("email",email);
             session.setAttribute( "user", user );
-            session.setAttribute( "role", user.getRole() );
+            session.setAttribute( "role", user.isAdmin() );
             return "index";
         } else {
             throw new LoginSampleException( "the two passwords did not match" );

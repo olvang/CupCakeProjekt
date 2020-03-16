@@ -8,17 +8,17 @@ import java.util.ArrayList;
  */
 public class User {
 
-    public User( String email, String password, String role, double balance ) {
+    public User( String email, String password, boolean admin, double balance ) {
         this.email = email;
         this.password = password;
-        this.role = role;
+        this.admin = admin;
         this.balance = balance;
     }
 
     private int id; // just used to demo retrieval of autogen keys in UserMapper
     private String email;
     private String password; // Should be hashed and secured
-    private String role;
+    private boolean admin;
     private double balance;
 
     public String getEmail() {
@@ -37,12 +37,8 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole( String role ) {
-        this.role = role;
+    public boolean isAdmin() {
+        return admin;
     }
 
     public int getId() {

@@ -16,7 +16,7 @@ public class LogicFacade {
     } 
 
     public static User createUser( String email, String password ) throws LoginSampleException {
-        User user = new User(email, password, "customer",0);
+        User user = new User(email, password, false,0);
         UserMapper.createUser( user );
         return user;
     }
