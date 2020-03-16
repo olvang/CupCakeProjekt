@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CupCakeProjekt:war" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="371db706-c948-41ec-bcf3-c4be48b313cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/TopAndBottoms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/TopAndBottoms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DBAccess/CupCakeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DBAccess/CupCakeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/Bottom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/Bottom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/CupCake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/CupCake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FunctionLayer/LogicFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FunctionLayer/LogicFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/AddToOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/AddToOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PresentationLayer/ShowFrontPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PresentationLayer/ShowFrontPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,25 +100,14 @@
       <recent name="FunctionLayer" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
-    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.511" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/CupCakeProjekt_war_exploded/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Cupcake Projekt:war">
+        <artifact name="CupCakeProjekt:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/Cupcake_Projekt_war" />
+            <option name="CONTEXT_PATH" value="/CupCakeProjekt_war_exploded" />
           </settings>
         </artifact>
       </deployment>
@@ -172,9 +171,32 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="Cupcake Projekt:war" />
+          <artifact name="CupCakeProjekt:war exploded" />
         </option>
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -193,6 +215,7 @@
       <workItem from="1584268526995" duration="9197000" />
       <workItem from="1584290112958" duration="2491000" />
       <workItem from="1584294372086" duration="828000" />
+      <workItem from="1584345845676" duration="3377000" />
     </task>
     <task id="LOCAL-00001" summary="intelliJ added to .gitignore">
       <created>1584095712160</created>
@@ -268,35 +291,71 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="637" y="255" key="#Tomcat_Server/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584095157338" />
-    <state x="499" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584095172572">
+    <state x="499" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584349206744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="499" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584095172572" />
+    <state x="499" y="252" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349206744" />
     <state x="304" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.956@0.23.1680.956" timestamp="1583929307535" />
     <state x="825" y="338" key="FileChooserDialogImpl" timestamp="1584095156362">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="825" y="338" key="FileChooserDialogImpl/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584095156362" />
-    <state width="1638" height="256" key="GridCell.Tab.0.bottom" timestamp="1583929306591">
-      <screen x="0" y="23" width="1680" height="956" />
-    </state>
-    <state width="1638" height="256" key="GridCell.Tab.0.bottom/0.23.1680.956@0.23.1680.956" timestamp="1583929306591" />
-    <state width="1638" height="256" key="GridCell.Tab.0.center" timestamp="1583929306590">
-      <screen x="0" y="23" width="1680" height="956" />
-    </state>
-    <state width="1638" height="256" key="GridCell.Tab.0.center/0.23.1680.956@0.23.1680.956" timestamp="1583929306590" />
-    <state width="1638" height="256" key="GridCell.Tab.0.left" timestamp="1583929306590">
-      <screen x="0" y="23" width="1680" height="956" />
-    </state>
-    <state width="1638" height="256" key="GridCell.Tab.0.left/0.23.1680.956@0.23.1680.956" timestamp="1583929306590" />
-    <state width="1638" height="256" key="GridCell.Tab.0.right" timestamp="1583929306590">
-      <screen x="0" y="23" width="1680" height="956" />
-    </state>
-    <state width="1638" height="256" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1583929306590" />
-    <state x="1485" y="633" key="com.intellij.ide.util.TipDialog" timestamp="1584290107927">
+    <state width="1741" height="401" key="GridCell.Tab.0.bottom" timestamp="1584349291232">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1485" y="633" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584290107927" />
+    <state width="1741" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291232" />
+    <state width="1638" height="256" key="GridCell.Tab.0.bottom/0.23.1680.956@0.23.1680.956" timestamp="1583929306591" />
+    <state width="1741" height="401" key="GridCell.Tab.0.center" timestamp="1584349291232">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291232" />
+    <state width="1638" height="256" key="GridCell.Tab.0.center/0.23.1680.956@0.23.1680.956" timestamp="1583929306590" />
+    <state width="1741" height="401" key="GridCell.Tab.0.left" timestamp="1584349291232">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291232" />
+    <state width="1638" height="256" key="GridCell.Tab.0.left/0.23.1680.956@0.23.1680.956" timestamp="1583929306590" />
+    <state width="1741" height="401" key="GridCell.Tab.0.right" timestamp="1584349291232">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291232" />
+    <state width="1638" height="256" key="GridCell.Tab.0.right/0.23.1680.956@0.23.1680.956" timestamp="1583929306590" />
+    <state width="1741" height="401" key="GridCell.Tab.1.bottom" timestamp="1584349291232">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291232" />
+    <state width="1741" height="401" key="GridCell.Tab.1.center" timestamp="1584349291232">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.1.center/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291232" />
+    <state width="1741" height="401" key="GridCell.Tab.1.left" timestamp="1584349291232">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.1.left/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291232" />
+    <state width="1741" height="401" key="GridCell.Tab.1.right" timestamp="1584349291232">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.1.right/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291232" />
+    <state width="1741" height="401" key="GridCell.Tab.2.bottom" timestamp="1584349291233">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.2.bottom/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291233" />
+    <state width="1741" height="401" key="GridCell.Tab.2.center" timestamp="1584349291232">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.2.center/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291232" />
+    <state width="1741" height="401" key="GridCell.Tab.2.left" timestamp="1584349291232">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.2.left/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291232" />
+    <state width="1741" height="401" key="GridCell.Tab.2.right" timestamp="1584349291232">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1741" height="401" key="GridCell.Tab.2.right/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584349291232" />
+    <state x="1485" y="633" key="com.intellij.ide.util.TipDialog" timestamp="1584345878101">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1485" y="633" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/-1920.350.1920.1080@0.0.2560.1400" timestamp="1584345878101" />
     <state x="1091" y="619" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584270311129">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

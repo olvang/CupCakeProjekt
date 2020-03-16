@@ -2,8 +2,12 @@ package FunctionLayer;
 
 public class CupCake {
     private int amount;
-    private String bottom;
-    private String top;
+    private Bottom bottom;
+    private Topping top;
+
+    public CupCake(int amount, Bottom bottom, Topping topping) {
+
+    }
 
     public int getAmount() {
         return amount;
@@ -13,19 +17,19 @@ public class CupCake {
         this.amount = amount;
     }
 
-    public String getBottom() {
+    public Bottom getBottom() {
         return bottom;
     }
 
-    public void setBottom(String bottom) {
+    public void setBottom(Bottom bottom) {
         this.bottom = bottom;
     }
 
-    public String getTop() {
+    public Topping getTop() {
         return top;
     }
 
-    public void setTop(String top) {
+    public void setTop(Topping top) {
         this.top = top;
     }
 }

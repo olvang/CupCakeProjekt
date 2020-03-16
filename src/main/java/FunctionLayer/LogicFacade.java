@@ -1,5 +1,6 @@
 package FunctionLayer;
 
+import DBAccess.CupCakeMapper;
 import DBAccess.UserMapper;
 
 /**
@@ -16,6 +17,10 @@ public class LogicFacade {
         User user = new User(email, password, "customer",0);
         UserMapper.createUser( user );
         return user;
+    }
+
+    public static TopAndBottoms getTopAndBottoms() {
+        return new CupCakeMapper().getTopAndBottoms();
     }
 
 }
