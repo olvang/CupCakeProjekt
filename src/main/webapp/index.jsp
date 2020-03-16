@@ -16,12 +16,6 @@
 </head>
 <body>
 
-<%!
-    @Override
-    public void jspInit() {
-        TopAndBottoms.initTopAndBottoms();
-    }
-%>
 <%
     new ShowFrontPage().execute(request, response);
 %>
