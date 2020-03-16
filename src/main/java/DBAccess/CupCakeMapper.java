@@ -21,7 +21,7 @@ public class CupCakeMapper {
             String SQLTopping = "SELECT * FROM cupcake_top";
             PreparedStatement ps = con.prepareStatement(SQLBottom);
             ResultSet rs = ps.executeQuery();
-            if( rs.next() ) {
+            while( rs.next() ) {
                 int id = rs.getInt("cb_id");
                 String bottomName = rs.getString("cb_name");
                 int price = rs.getInt("cb_price");
@@ -31,7 +31,7 @@ public class CupCakeMapper {
             ps.close();
             ps = con.prepareStatement(SQLTopping);
             rs = ps.executeQuery();
-            if (rs.next()) {
+            while (rs.next()) {
                 int id = rs.getInt("cp_id");
                 String toppingName = rs.getString("cp_name");
                 int price = rs.getInt("cp_price");
