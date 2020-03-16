@@ -53,6 +53,10 @@ public class User {
         return null;
     }
 
+    public double getBalance() {
+        return balance;
+    }
+
     public User updateUser(int userID){
         return null;
     }

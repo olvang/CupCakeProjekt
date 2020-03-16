@@ -23,7 +23,7 @@ public class UserMapper {
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             ps.setString( 1, user.getEmail() );
             ps.setString( 2, user.getPassword() );
-            ps.setInt( 3, 0);
+            ps.setBoolean( 3, user.isAdmin());
             ps.setDouble(4, 0.0);
             ps.executeUpdate();
             ResultSet ids = ps.getGeneratedKeys();

@@ -9,60 +9,80 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome page</title>
-    </head>
-    <body>
-        <h1>Welcome to Sem 2</h1>
 
-        <table>
-            <tr><td>Login</td>
-                <td>
-                    <form name="login" action="FrontController" method="POST">
-                        <input type="hidden" name="taget" value="login">
-                        Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
-                        <br>
-                        Password:<br>
-                        <input type="password" name="password" value="sesam">
-                        <br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </td>
-                <td>Or Register</td>
-                <td>
-                    <form name="register" action="FrontController" method="POST">
-                        <input type="hidden" name="taget" value="register">
-                        Email:<br>
-                        <input type="text" name="email" value="someone@nowhere.com">
-                        <br>
-                        Password:<br>
-                        <input type="password" name="password1" value="sesam">
-                        <br>
-                        Retype Password:<br>
-                        <input type="password" name="password2" value="sesam">
-                        <br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </td>
-            </tr>
-        </table>
+<head>
+    <meta charset="UTF-8">
+    <title>Olsker Cupcakes - Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="d-flex flex-column">
+
+<div class="container main border rounded mb-2 pt-1 pagecontainer">
+    <div class="form-row">
+        <div class="col-lg-6">
+            <form name="login" action="FrontController" method="POST">
+                <input type="hidden" name="target" value="login">
+                <h1>Log ind</h1>
+                <div class="container px-5">
+                    <div class="form-group">
+                        <label for="LoginEmail">Email Adresse</label>
+                        <input name="LoginEmail" type="email" class="form-control" id="LoginEmail"
+                               placeholder="Indtast Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="LoginPassword">Kodeord</label>
+                        <input id="LoginPassword" name="LoginPassword" type="password" class="form-control"
+                               placeholder="Kodeord" required>
+                    </div>
+                    <button type="submit" class="btn button buttonLogin">Login</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col d-lg-none d-xl-none py-3">
+            <hr class="dividerLogin">
+        </div>
+        <div class="col-lg-6">
+            <form name="register" action="FrontController" method="POST">
+                <input type="hidden" name="target" value="register">
+                <h1>Registrer</h1>
+                <p style="color: red;">${requestScope.error}</p>
+                <div class="container px-5">
+                    <div class="form-group">
+                        <label for="RegisterEmail">Email Adresse</label>
+                        <input name="RegisterEmail" type="email" class="form-control" id="RegisterEmail"
+                               placeholder="Indtast Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="RegisterPassword1">Kodeord</label>
+                        <input id="RegisterPassword1" name="RegisterPassword1" type="password" class="form-control"
+                               placeholder="Kodeord" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="RegisterPassword2">Gentag Kodeord</label>
+                        <input id="RegisterPassword2" name="RegisterPassword2" type="password" class="form-control"
+                               placeholder="Kodeord" required>
+                    </div>
+                    <button type="submit" class="btn button buttonLogin">Opret Konto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
-<%--        Bare lige se I har en ide om hvad vi forslå I ikke gør ! det hedder scpript lets --%>
-<%--        <% String error = (String) request.getAttribute( "error");--%>
-<%--           if ( error != null) { --%>
-<%--               out.println("<H2>Error!!</h2>");--%>
-<%--               out.println(error);--%>
-<%--           }--%>
-<%--        %>--%>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
 
-        <c:if test = "${requestScope.error!= null}" >
-
-           <h2>Error ! </h2>
-            ${requestScope.error}
-
-        </c:if>
-    </body>
 </html>
