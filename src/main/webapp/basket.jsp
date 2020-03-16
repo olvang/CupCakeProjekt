@@ -1,10 +1,11 @@
+<%@ page import="PresentationLayer.ShowBasket" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Olsker Cupcakes - Kurv</title>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
             crossorigin="anonymous"></script>
@@ -17,13 +18,20 @@
     <script src="https://kit.fontawesome.com/c97c9bd36e.js" crossorigin="anonymous"></script>
 </head>
 <body class="d-flex flex-column">
+<%
+    new ShowBasket().execute(request, response);
+%>
+
+
 <jsp:include page="header.jsp"></jsp:include>
 <div class="outer">
     <div class="container pagecontainer main border rounded mb-2">
 
         <div class="pagecontainer mt-1  mt-4">
             <table class="outerTable table-bordered">
-                <c:forEach var="cupcake" items="${sessionScope.order.orderlines}">
+                <form action="FrontController" method="POST">
+                    <input type="hidden" name="target" value="updateOrder">
+                <c:forEach var="cupcake" items="${sessionScope.order.orderlines}" varStatus="count">
                     <tr class="border_bottomOuter">
                         <td>
                             <div class="row">
@@ -51,10 +59,10 @@
                                     <div class="d-flex flex-row justify-content-end align-items-center "
                                          style="height: 100px;">
                                         <div class="p-5">
-                                            <h5>${cupcake.price}</h5>
+                                            <h5>${cupcake.price} kr.</h5>
                                         </div>
                                         <div class="p-4">
-                                            <h6>x${cupcake.amount}</h6>
+                                            <h6><input class="form-control" value="${cupcake.amount}" type="number" id="quantity" name="quantity${count.index}" style="width: 65px;"></h6>
                                         </div>
                                     </div>
                                 </div>
@@ -66,10 +74,12 @@
 
                     <div class="d-flex flex-row justify-content-end align-items-center" style="height: 50px;">
                         <div class="p-4">
-                            <h6 class="mt-2">Antal Cupcakes: ${sessionScope.order.orderlines.size()}</h6>
+                            <h6 class="mt-2">Antal Cupcakes: ${sessionScope.cupcakeAmount}</h6>
                         </div>
-                        <button type="button" class="btn btn-warning mr-4">Opdater kurv</button>
+                        <button type="submit" class="btn btn-warning mr-4">Opdater kurv</button>
+
                     </div>
+                </form>
                 </td>
             </table>
 
@@ -96,7 +106,7 @@
                                 <h4>Ordreoversigt</h4>
                             </div>
                             <div>
-                                <p class="ml-2 mt-2 orderprice" style="float:left;">Total:</p>
+                                <p class="ml-2 mt-2 pl-3 orderprice" style="float:left;">Total:</p>
                                 <p class="mr-2 mt-2 orderprice" style="float:right;">${sessionScope.order.getPrice()} kr.</p>
                             </div>
 

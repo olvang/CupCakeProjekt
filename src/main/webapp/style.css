@@ -180,3 +180,21 @@ h2 {
     border-top: 1px solid #C4C4C4;
     width:100%;
 }
+
+.fa-stack[data-count]:after{
+    position:absolute;
+    right:-20%;
+    top:0%;
+    content: attr(data-count);
+    font-size:40%;
+    padding:.6em;
+    border-radius:999px;
+    line-height:.75em;
+    color: white;
+    color:#8AFFCC;
+    text-align:center;
+    min-width:2em;
+    font-weight:bold;
+    background: white;
+    border-style:solid;
+}

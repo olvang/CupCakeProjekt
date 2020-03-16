@@ -30,8 +30,20 @@ public class AddToOrder extends Command{
             //bottom = TopAndBottoms.getBottoms().get(Integer.parseInt(request.getParameter("bottom")));
             //topping = TopAndBottoms.getToppings().get(Integer.parseInt(request.getParameter("topping")));
 
+            if(amount < 1){
+                throw new IllegalArgumentException();
+            }else if(amount > 30){
+                amount = 30;
+            }
+
             order.addToOrder(bottom, topping, amount);
 
+                int cupcakeAmount = 0;
+                for (int i = 0; i < order.getOrderlines().size(); i++) {
+                    cupcakeAmount += order.getOrderlines().get(i).getAmount();
+                }
+
+            session.setAttribute("cupcakeAmount", cupcakeAmount);
             request.setAttribute("msg", "Cupcake tilføjet til kurv!");
             //order.addToOrder(new CupCake());
         }catch(Exception ex) {

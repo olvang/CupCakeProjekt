@@ -18,9 +18,22 @@
                    <p class='navbar-brand my-2 my-sm-0'> ${sessionScope.email}</p>
                 </c:otherwise>
             </c:choose>
-            <a class= "navbar-brand my-2 my-sm-0" href="basket.html">
-                <i class="fas fa-shopping-cart fa-lg"></i>
-            </a>
+            <c:choose>
+                <c:when test="${sessionScope.cupcakeAmount == null}">
+                    <a class= "navbar-brand my-2 my-sm-0" href="basket.jsp">
+                  <i style="" class="fa fa-shopping-cart fa-stack-lg"></i>
+                    </a>
+                </c:when>
+                <c:otherwise>
+                    <a class= "navbar-brand my-2 my-sm-0" href="basket.jsp">
+                <span class="fa-stack fa-lg has-badge" data-count="${sessionScope.cupcakeAmount}">
+                  <i class="fa fa-circle fa-stack-lg fa-inverse"></i>
+                  <i style="" class="fa fa-shopping-cart fa-stack-lg"></i>
+                </span>
+                    </a>
+                </c:otherwise>
+            </c:choose>
+
 
         </div>
 

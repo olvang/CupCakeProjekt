@@ -58,7 +58,11 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 my-1">
-                        <label class="" for="addtobasket">${requestScope.msg}</label>
+                        <c:choose>
+                            <c:when test="${requestScope.msg != null}">
+                                <label class="alert alert-primary" for="addtobasket">${requestScope.msg}</label>
+                            </c:when>
+                        </c:choose>
                         <input type="submit" class="btn btn-primary button" id="addtobasket" value="Føj til kurv">
                     </div>
                 </div>
