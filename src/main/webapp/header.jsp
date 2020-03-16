@@ -6,9 +6,11 @@
 
     <nav class="navbar navbar-light bg-light justify-content-between mt-1">
         <a class="navbar-text">Forside</a>
-        <a href="login.html" class= "navbar-text mr-2">login</a>
-        <a class="navbar-text mr-2">/</a>
-        <a href="" class="navbar-text mr-2">registrer</a>
+        <a href="login.html" class= "navbar-text my-2 my-lg-0">login / registre</a>
+
+        <a class= "navbar-text my-2 my-lg-0" href="basket.html">
+            <img border="0" src="images/cart.png" width="36" height="32">
+        </a>
     </nav>
 
 </div>
