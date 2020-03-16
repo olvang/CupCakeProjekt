@@ -21,7 +21,7 @@
 %>
 <jsp:include page="header.jsp"></jsp:include>
 <div class="outer">
-    <div class="pagecontainer main border rounded ">
+    <div class="container pagecontainer main border rounded ">
         <h1 class="title">Velkommen ombord! </h1>
         <h2 class="subtitle">Øens bedste cupcakes. Vælg og bestil her:</h2>
 

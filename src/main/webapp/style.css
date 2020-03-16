@@ -48,9 +48,6 @@ body,html{
 
 .pagecontainer {
     background-color: white;
-    margin-left: 12px;
-    margin-right: 12px;
-    margin-top: 12px;
 }
 
 .custom-select:focus,
