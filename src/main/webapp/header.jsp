@@ -8,14 +8,7 @@
 
     <nav class="navbar navbar-light mt-2 pagecontainer">
         <a href="index.jsp" class="navbar-text">Forside</a>
-
-        <c:choose>
-            <c:if test="${sessionScope.email != null}">
-                <p>${sessionScope.email}</p>
-            </c:if>
-
-        </c:choose>
-
+        
         <div class="form-inline my-4 my-lg-0">
         <c:choose>
             <c:when test="${sessionScope.email == null}">
@@ -24,6 +17,7 @@
             <c:when test="${sessionScope.email != null}">
                 <p>${sessionScope.email}</p>
             </c:when>
+
         </c:choose>
             <a class= "navbar-brand my-2 my-sm-0" href="basket.html">
                 <i class="fas fa-shopping-cart fa-lg"></i>
