@@ -19,6 +19,7 @@
 </head>
 
 <body class="d-flex flex-column">
+<jsp:include page="header.jsp"></jsp:include>
 
 <div class="container main border rounded mb-2 pt-1 pagecontainer">
     <div class="form-row">
@@ -71,6 +72,9 @@
             </form>
         </div>
     </div>
+
+    <jsp:include page="footer.jsp"></jsp:include>
+
 </div>
 
 

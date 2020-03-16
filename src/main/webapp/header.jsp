@@ -15,9 +15,16 @@
             </c:if>
 
         </c:choose>
-        <div class="form-inline my-4 my-lg-0">
-            <a href="login.html" class= "navbar-text mr-sm-2">login / registre</a>
 
+        <div class="form-inline my-4 my-lg-0">
+        <c:choose>
+            <c:when test="${sessionScope.email == null}">
+                <a href="login.jsp" class= "navbar-text mr-sm-2">login / registrer</a>
+            </c:when>
+            <c:when test="${sessionScope.email != null}">
+                <p>${sessionScope.email}</p>
+            </c:when>
+        </c:choose>
             <a class= "navbar-brand my-2 my-sm-0" href="basket.html">
                 <i class="fas fa-shopping-cart fa-lg"></i>
             </a>
