@@ -1,8 +1,6 @@
 package DBAccess;
 
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.TopAndBottoms;
-import FunctionLayer.User;
+import FunctionLayer.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -86,6 +85,46 @@ public class CupCakeMapperTest {
         //Assert
         assertEquals(expectedBottomName, actualBottomName);
         assertEquals(expectedBottomPrice, actualBottomPrice, 0.01);
+        assertEquals(expectedToppingName, actualToppingName);
+        assertEquals(expectedToppingPrice, actualToppingPrice, 0.01);
+    }
+
+    @Test
+    public void testGetBottoms() {
+        ArrayList<Bottom> bottoms = CupCakeMapper.getBottoms();
+        int testIndex = 2;
+        String expectedBottomName;
+        String actualBottomName;
+        double expectedBottomPrice;
+        double actualBottomPrice;
+
+        //Act bottoms
+        expectedBottomName = "Nutmeg";
+        actualBottomName = bottoms.get(testIndex).getName();
+        expectedBottomPrice = 5.0;
+        actualBottomPrice = bottoms.get(testIndex).getPrice();
+
+        //Assert
+        assertEquals(expectedBottomName, actualBottomName);
+        assertEquals(expectedBottomPrice, actualBottomPrice, 0.01);
+    }
+
+    @Test
+    public void testGetToppings() {
+        ArrayList<Topping> toppings = CupCakeMapper.getToppings();
+        int testIndex = 2;
+        String expectedToppingName;
+        String actualToppingName;
+        double expectedToppingPrice;
+        double actualToppingPrice;
+
+        //Act
+        expectedToppingName = "Rasberry";
+        actualToppingName = toppings.get(testIndex).getName();
+        expectedToppingPrice = 5.0;
+        actualToppingPrice = toppings.get(testIndex).getPrice();
+
+        //Assert
         assertEquals(expectedToppingName, actualToppingName);
         assertEquals(expectedToppingPrice, actualToppingPrice, 0.01);
     }

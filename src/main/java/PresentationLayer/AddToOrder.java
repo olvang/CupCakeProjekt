@@ -16,15 +16,27 @@ public class AddToOrder extends Command{
         Bottom bottom;
         Topping topping;
 
-        if (session.getAttribute("order") == null) {
-            session.setAttribute("order", new Order());
+        try {
+            if (session.getAttribute("order") == null) {
+                session.setAttribute("order", new Order());
+            }
+            order = (Order) session.getAttribute("order");
+            amount = Integer.parseInt(request.getParameter("quantity"));
+            //By name
+            bottom = TopAndBottoms.getBottomByName(request.getParameter("bottom"));
+            topping = TopAndBottoms.getToppingByName(request.getParameter("topping"));
+
+            //By id (might not work)
+            //bottom = TopAndBottoms.getBottoms().get(Integer.parseInt(request.getParameter("bottom")));
+            //topping = TopAndBottoms.getToppings().get(Integer.parseInt(request.getParameter("topping")));
+
+            order.addToOrder(bottom, topping, amount);
+
+            request.setAttribute("msg", "Cupcake tilføjet til kurv!");
+            //order.addToOrder(new CupCake());
+        }catch(Exception ex) {
+            request.setAttribute("msg", "Der skete en fejl.");
         }
-        order = (Order) session.getAttribute("order");
-        amount = Integer.parseInt(request.getParameter("amount"));
-
-
-        //order.addToOrder(new CupCake());
-
         return "index";
     }
 }

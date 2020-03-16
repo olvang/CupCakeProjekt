@@ -1,4 +1,11 @@
+<%@ page import="FunctionLayer.TopAndBottoms" %>
+<%@ page import="FunctionLayer.LogicFacade" %>
+<%@ page import="FunctionLayer.Bottom" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="FunctionLayer.Topping" %>
+<%@ page import="PresentationLayer.ShowFrontPage" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <html>
 <head>
@@ -12,11 +19,11 @@
 <%!
     @Override
     public void jspInit() {
-        //TODO initialiser bund og top liste
+        TopAndBottoms.initTopAndBottoms();
     }
 %>
 <%
-    //TODO læg listerne i requestscope
+    new ShowFrontPage().execute(request, response);
 %>
 
 <div class="outer">
@@ -25,36 +32,30 @@
         <h2 class="subtitle">Øens bedste cupcakes. Vælg og bestil her:</h2>
 
         <div class="container">
-            <form name="addToOrder" action="FrontController" method="POST">
+            <form name="addToOrder" action="FrontController" method="POST" id="addToOrder">
                 <input type="hidden" name="target" value="addToOrder">
                 <div class="form-row align-items-center">
                     <div class="col-lg-4 my-1">
-                        <label class="mr-md-3" for="bottoms">Bund</label>
-                        <select class="custom-select mb-4" id="bottoms">
+
+                        <label class="mr-md-3" for="bottom">Bund</label>
+                        <select class="custom-select mb-4" id="bottom" name="bottom">
                             <option selected disabled>Vælg...</option>
-                            <!-- TODO læg alle bunde i en liste kaldt bottoms, i requestScope -->
-                            <c: forEach var="bottom" items="${bottoms}">
-                                <option value="${bottom}">${bottom}</option>
-                            </c:>
-                            <%--<option value="Chocolate">Chocolate</option>
-                            <option value="Vanilla">Vanilla</option>
-                            <option value="Nutmeg">Nutmeg</option>
-                            <option value="Pistacio">Pistacio</option>--%>
+                            <c:forEach var="bottom" items="${requestScope.bottoms}">
+                                <option value="${bottom.name}">${bottom.name}: ${bottom.price} kr.</option>
+                            </c:forEach>
                         </select>
+
                     </div>
                     <div class="col-lg-4 my-1">
-                        <label class="mr-md-3" for="bottoms">Topping</label>
-                        <select class="custom-select mb-4" id="toppings">
+
+                        <label class="mr-md-3" for="topping">Topping</label>
+                        <select class="custom-select mb-4" id="topping" name="topping">
                             <option selected disabled>Vælg...</option>
-                            <!-- TODO læg alle toppe i en liste kaldt toppings, i requestScope -->
-                            <c: forEach var="topping" items="${toppings}">
-                                <option value="${topping}">${topping}</option>
-                            </c:>
-                            <%--<option value="Chocolate">Chocolate</option>
-                            <option value="Blueberry">Blueberry</option>
-                            <option value="Rasberry">Rasberry</option>
-                            <option value="Crispy">Crispy</option>--%>
+                            <c:forEach var="topping" items="${requestScope.toppings}">
+                                <option value="${topping.name}">${topping.name}: ${topping.price} kr.</option>
+                            </c:forEach>
                         </select>
+
                     </div>
                     <div class="col-lg-4 my-1">
                         <label class="mr-md-3" for="quantity">Antal</label>
@@ -63,7 +64,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 my-1">
-                        <!-- TODO tilføj "cupcake lagt i kurv" tekst -->
+                        <label class="" for="addtobasket">${requestScope.msg}</label>
                         <input type="submit" class="btn btn-primary button" id="addtobasket" value="Føj til kurv">
                     </div>
                 </div>

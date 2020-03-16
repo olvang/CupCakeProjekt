@@ -5,11 +5,11 @@ import com.sun.org.apache.xpath.internal.operations.Or;
 import java.util.ArrayList;
 
 public class Order {
-    private ArrayList<CupCake> orderlines;
+    private ArrayList<CupCake> orderlines = new ArrayList();
     private User customer;
 
-    public void addToOrder(int top, int bottom){
-
+    public void addToOrder(Bottom bottom, Topping top, int amount){
+        orderlines.add(new CupCake(amount, bottom, top));
     }
 
     public void deleteFromOrder(int orderlinesPos){

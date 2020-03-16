@@ -1,20 +1,23 @@
 package PresentationLayer;
 
-import FunctionLayer.LogicFacade;
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.TopAndBottoms;
+import FunctionLayer.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 public class ShowFrontPage extends Command{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
-        TopAndBottoms catalog = LogicFacade.getTopAndBottoms();
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
-        request.setAttribute("bottoms", catalog.getBottoms());
-        request.setAttribute("toppings", catalog.getToppings());
+        //TODO consider whether this should even be a command
+        TopAndBottoms.initTopAndBottoms();
+        ArrayList<Bottom> bottoms = TopAndBottoms.getBottoms();
+        ArrayList<Topping> toppings = TopAndBottoms.getToppings();
+
+        request.setAttribute("bottoms", bottoms);
+        request.setAttribute("toppings", toppings);
 
         return "index";
     }
