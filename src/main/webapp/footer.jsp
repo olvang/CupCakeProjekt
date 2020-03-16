@@ -1,5 +1,13 @@
-
-<footer class="container pagecontainer rounded mt-auto mb-2 text-left py-2 p">
+<%--
+  Created by IntelliJ IDEA.
+  User: Oliver
+  Date: 16/03/2020
+  Time: 14.42
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<div class="container" style="padding-left: 0px;padding-right: 0px;">
+<footer class="pagecontainer rounded mt-auto mb-2 text-left py-2 p">
     <div class="row">
         <div class="col pl-5">
             Åbningstider:<br>
@@ -19,4 +27,5 @@
         </div>
     </div>
 </footer>
+</div>
 
