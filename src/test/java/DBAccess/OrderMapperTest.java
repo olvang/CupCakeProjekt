@@ -50,7 +50,7 @@ public class OrderMapperTest {
         Topping top = new Topping(1,"Chocolate", 5.0);
 
         ord.addToOrder(bot, top, 1);
-        ord.addToOrder(bot, top, 1);
+        ord.addToOrder(bot, top, 2);
 
         OrderMapper.saveOrder(ord);
     }

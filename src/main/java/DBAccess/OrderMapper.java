@@ -29,7 +29,7 @@ public class OrderMapper {
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
             id = rs.getInt( 1 );
-            System.out.println(order.getOrderlines().size());
+            
             for (CupCake cc: order.getOrderlines()) {
                 String oSQL = "INSERT into order_line (o_id,cp_id,cb_id, amount) VALUES(?, ?, ?, ?)";
                 PreparedStatement ops = con.prepareStatement(oSQL);
@@ -38,7 +38,7 @@ public class OrderMapper {
                 ops.setInt(2,cc.getTopId());
                 ops.setInt(3,cc.getBottomId());
                 ops.setInt(4,cc.getAmount());
-                System.out.println("hello");
+
                 ops.executeUpdate();
             }
 
