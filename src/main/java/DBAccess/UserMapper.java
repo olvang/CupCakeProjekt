@@ -105,9 +105,9 @@ public class UserMapper {
                     User user = new User(email, false, balance);
                     user.setId(id);
                     customers.add(user);
-                //check while after, to avoid missing first row due to if statement
+                    //check while after, to avoid missing first row due to if statement
                 } while (rs.next());
-            }else {
+            } else {
                 throw new LoginSampleException("There are no customers");
             }
 
@@ -130,25 +130,25 @@ public class UserMapper {
             if (user.getPassword() == null) {
                 SQL = "UPDATE users SET email = ?, balance = ? " +
                         "WHERE u_id = ?";
-                ps = con.prepareStatement( SQL );
+                ps = con.prepareStatement(SQL);
                 ps.setString(1, user.getEmail());
                 ps.setDouble(2, user.getBalance());
                 ps.setInt(3, user.getId());
             } else {
                 SQL = "UPDATE users SET password = ?, email = ?, balance = ? " +
                         "WHERE u_id = ?";
-                ps = con.prepareStatement( SQL );
+                ps = con.prepareStatement(SQL);
                 ps.setString(1, user.getPassword());
                 ps.setString(2, user.getEmail());
                 ps.setDouble(3, user.getBalance());
                 ps.setInt(4, user.getId());
             }
             int affectedRows = ps.executeUpdate();
-            if(affectedRows == 0) {
-                throw new LoginSampleException( "User does not exist" );
+            if (affectedRows == 0) {
+                throw new LoginSampleException("User does not exist");
             }
         } catch (SQLException | ClassNotFoundException e) {
-            throw new LoginSampleException( "Unknown SQL error" );
+            throw new LoginSampleException("Unknown SQL error");
         }
     }
 }

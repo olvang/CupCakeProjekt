@@ -28,7 +28,6 @@ public class Pay extends Command {
         }
 
 
-
         try {
             User user = (User) session.getAttribute("user");
             Order order = (Order) session.getAttribute("order");
@@ -37,7 +36,7 @@ public class Pay extends Command {
 
 
             //check if user has enough to buy
-            if(order.getPrice() > user.getBalance()){
+            if (order.getPrice() > user.getBalance()) {
                 request.setAttribute("error", "Din saldo er for lav til denne ordre");
                 return "basket";
             }
@@ -45,14 +44,14 @@ public class Pay extends Command {
             //Inserts order to db and "resets"
             if (LogicFacade.saveOrder(order)) {
                 //Updates the user balance on the session
-                user.setBalance(user.getBalance()-order.getPrice());
+                user.setBalance(user.getBalance() - order.getPrice());
 
                 //Update the user balance in db
                 user.updateUser(user);
 
                 //reset/sets Attributes
-                session.setAttribute( "user", order.getCustomer() );
-                session.setAttribute( "balance", order.getCustomer().getBalance() );
+                session.setAttribute("user", order.getCustomer());
+                session.setAttribute("balance", order.getCustomer().getBalance());
                 session.setAttribute("order", null);
                 session.setAttribute("cupcakeAmount", null);
                 request.setAttribute("orderMessage", "Tak for din ordre, vi glæder os til at se dig!");
