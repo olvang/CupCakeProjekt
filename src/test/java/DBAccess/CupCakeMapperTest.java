@@ -3,6 +3,7 @@ package DBAccess;
 import FunctionLayer.*;
 import org.junit.Before;
 import org.junit.Test;
+import testsetup.TestDataSetup;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,13 +13,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class CupCakeMapperTest {
-//    Test date in the UsersTest table
-//    INSERT INTO `UsersTest` VALUES 
-//    (1,'jens@somewhere.com','jensen','customer'),
-//    (2,'ken@somewhere.com','kensen','customer'),
-//    (3,'robin@somewhere.com','batman','employee'),
-//    (4,'someone@nowhere.com','sesam','customer');
+public class CupCakeMapperTest extends TestDataSetup {
 
     private static Connection testConnection;
     private static String USER = "testinguser";
@@ -38,6 +33,8 @@ public class CupCakeMapperTest {
                 // Make mappers use test 
                 Connector.setConnection( testConnection );
             }
+
+            rebuildDB();
             // reset test database
            /* try ( Statement stmt = testConnection.createStatement() ) {
                 stmt.execute( "drop table if exists users" );

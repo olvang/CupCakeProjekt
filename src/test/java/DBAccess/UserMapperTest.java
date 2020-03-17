@@ -9,14 +9,9 @@ import java.sql.Statement;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
+import testsetup.TestDataSetup;
 
-public class UserMapperTest {
-//    Test date in the UsersTest table
-//    INSERT INTO `UsersTest` VALUES 
-//    (1,'jens@somewhere.com','jensen','customer'),
-//    (2,'ken@somewhere.com','kensen','customer'),
-//    (3,'robin@somewhere.com','batman','employee'),
-//    (4,'someone@nowhere.com','sesam','customer');
+public class UserMapperTest extends TestDataSetup {
 
     private static Connection testConnection;
     private static String USER = "testinguser";
@@ -36,6 +31,7 @@ public class UserMapperTest {
                 // Make mappers use test 
                 Connector.setConnection( testConnection );
             }
+
             // reset test database
 //            try ( Statement stmt = testConnection.createStatement() ) {
 //                stmt.execute( "drop table if exists users" );
@@ -84,4 +80,28 @@ public class UserMapperTest {
         User retrieved = UserMapper.login( "king@kong.com", "uhahvorhemmeligt" );
         assertEquals( true, retrieved.isAdmin() );
     }
+
+    @Test
+    public void testGetUser() throws LoginSampleException {
+        int id = 2;
+        String expectedEmail = "jensen@nowhere.com";
+        double expectedBalance = 0;
+
+        User user = UserMapper.getUser(id);
+
+        assertEquals(expectedEmail, user.getEmail());
+        assertFalse(user.isAdmin());
+        assertEquals(expectedBalance, user.getBalance(), 0.01);
+    }
+
+    @Test (expected = LoginSampleException.class)
+    public void testGetNonExistingUser() throws LoginSampleException {
+        UserMapper.getUser(22);
+    }
+
+    @Test
+    public void testGetAllCustomers() throws LoginSampleException {
+        
+    }
+
 }

@@ -15,6 +15,12 @@ public class User {
         this.balance = balance;
     }
 
+    public User(String email, boolean admin, double balance) {
+        this.email = email;
+        this.admin = admin;
+        this.balance = balance;
+    }
+
     private int id; // just used to demo retrieval of autogen keys in UserMapper
     private String email;
     private String password; // Should be hashed and secured
