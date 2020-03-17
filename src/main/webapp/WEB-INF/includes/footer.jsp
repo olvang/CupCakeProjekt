@@ -21,9 +21,6 @@
                 <div class="p-2"><i class="fab fa-twitter fa-2x"></i></div>
                 <div class="p-2"><i class="fab fa-instagram fa-2x"></i></div>
             </div>
-
-
-
         </div>
     </div>
 </footer>

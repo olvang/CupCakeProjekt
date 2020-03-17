@@ -12,7 +12,6 @@ public class OrderMapper {
     public static boolean saveOrder(Order order){
         int id = -1;
         try {
-
             Connection con = Connector.connection();
             String SQL = "INSERT INTO orders (u_id, pick_up_date) VALUES (?, ?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS);
@@ -62,5 +61,35 @@ public class OrderMapper {
 
 
         return null;
+    }
+
+    public static ArrayList<Order> getAllOrdersFromUser(int userID) {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT orders.o_id, orders.pick_up_date, orders.created_at, count(*) as cupcakes" +
+                    "FROM orders" +
+                    "LEFT JOIN order_line" +
+                    "ON orders.o_id=order_line.o_id" +
+                    "WHERE orders.u_id = ?" +
+                    "GROUP BY order_line.o_id" +
+                    "ORDER BY o_id ASC;";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, userID);
+            ResultSet rs = ps.executeQuery();
+
+            //Jeg er virkelig stuck her.
+            //Jeg ved ikke hvordan det skal formuleres i én SQL query at vi skal have
+            // både antallet af cupcakes på hver ordre, prisen på hver, samt ordre id'et og begge datoer
+            //Det er jeg simpelthen ikke god nok til SQL til...
+            while(rs.next()) {
+                int id = rs.getInt("orders.o_id");
+                int amountOfCupcakes;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
