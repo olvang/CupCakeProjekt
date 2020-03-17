@@ -1,5 +1,7 @@
 package FunctionLayer;
 
+import DBAccess.UserMapper;
+
 import java.util.ArrayList;
 
 /**
@@ -63,8 +65,8 @@ public class User {
         return balance;
     }
 
-    public User updateUser(int userID){
-        return null;
+    public void updateUser(User user) throws LoginSampleException {
+        UserMapper.updateUser(user);
     }
 
     public User getUser(int userID){
@@ -76,6 +78,7 @@ public class User {
     }
 
     public void setBalance(double balance) {
+
         this.balance = balance;
     }
 }

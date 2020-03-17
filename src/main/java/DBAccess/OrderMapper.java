@@ -80,7 +80,7 @@ public class OrderMapper {
             //Jeg er virkelig stuck her.
             //Jeg ved ikke hvordan det skal formuleres i én SQL query at vi skal have
             // både antallet af cupcakes på hver ordre, prisen på hver, samt ordre id'et og begge datoer
-            //Det er jeg simpelthen ikke god nok til SQL til...
+            //Det er jeg simpelthen ikke god nok til SQL ttil...
             while(rs.next()) {
                 int id = rs.getInt("orders.o_id");
                 int amountOfCupcakes;

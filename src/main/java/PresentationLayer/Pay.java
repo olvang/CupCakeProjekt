@@ -37,7 +37,7 @@ public class Pay extends Command {
 
 
             //check if user has enough to buy
-            if(order.getPrice() > order.getCustomer().getBalance()){
+            if(order.getPrice() > user.getBalance()){
                 request.setAttribute("error", "Din saldo er for lav til denne ordre");
                 return "basket";
             }
@@ -45,7 +45,10 @@ public class Pay extends Command {
             //Inserts order to db and "resets"
             if (LogicFacade.saveOrder(order)) {
                 //Updates the user balance on the session
-                order.getCustomer().setBalance(order.getCustomer().getBalance()-order.getPrice());
+                user.setBalance(user.getBalance()-order.getPrice());
+
+                //Update the user balance in db
+                user.updateUser(user);
 
                 //reset/sets Attributes
                 session.setAttribute( "user", order.getCustomer() );
