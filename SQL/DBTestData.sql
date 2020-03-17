@@ -4,6 +4,7 @@ INSERT INTO `olskercupcake`.`users` (`email`,`password`,`balance`) VALUES ('some
 INSERT INTO `olskercupcake`.`users` (`email`,`password`,`balance`) VALUES ('jensen@nowhere.com','b1234',0);
 INSERT INTO `olskercupcake`.`users` (`email`,`password`,`balance`) VALUES ('pedersen@nowhere.com','c1234',40);
 INSERT INTO `olskercupcake`.`users` (`email`,`password`,`balance`) VALUES ('hansen@nowhere.com','d1234',4000);
+INSERT INTO `olskercupcake`.`users` (`email`,`password`,`balance`,`admin`) VALUES ('admin@admin.com','admin',100,1);
 
 TRUNCATE TABLE cupcake_bottom;
 INSERT INTO `olskercupcake`.`cupcake_bottom` (`cb_price`,`cb_name`) VALUES (5.00,'Chocolate');
@@ -31,23 +32,13 @@ INSERT INTO olskercupcake.orders (u_id,pick_up_date) VALUES (4,'2008-01-01 00:35
 INSERT INTO olskercupcake.orders (u_id,pick_up_date) VALUES (4,'2008-01-01 20:35:11');
 
 TRUNCATE TABLE order_line;
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id) VALUES (1,2,1);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id) VALUES (2,2,1);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id) VALUES (3,2,2);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id) VALUES (4,2,3);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id) VALUES (5,2,3);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id) VALUES (6,2,4);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id) VALUES (7,2,4);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id) VALUES (8,2,4);
-
-TRUNCATE TABLE cupcake_line;
-INSERT INTO olskercupcake.cupcake_line (cp_id, cb_id) VALUES (1,1);
-INSERT INTO olskercupcake.cupcake_line (cp_id, cb_id) VALUES (2,1);
-INSERT INTO olskercupcake.cupcake_line (cp_id, cb_id) VALUES (2,4);
-INSERT INTO olskercupcake.cupcake_line (cp_id, cb_id) VALUES (5,4);
-INSERT INTO olskercupcake.cupcake_line (cp_id, cb_id) VALUES (9,1);
-INSERT INTO olskercupcake.cupcake_line (cp_id, cb_id) VALUES (2,5);
-INSERT INTO olskercupcake.cupcake_line (cp_id, cb_id) VALUES (9,5);
-INSERT INTO olskercupcake.cupcake_line (cp_id, cb_id) VALUES (3,2);
+INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (1,2,1,1,1);
+INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (2,2,1,2,1);
+INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (3,2,2,2,4);
+INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (4,2,3,5,4);
+INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (5,2,3,9,1);
+INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (6,2,4,2,5);
+INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (7,2,4,9,5);
+INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (8,2,4,3,2);
 
 set foreign_key_checks=1;

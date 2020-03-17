@@ -24,17 +24,13 @@ CREATE TABLE `order_line` (
   `ol_id` int PRIMARY KEY AUTO_INCREMENT,
   `cl_id` int NOT NULL,
   `o_id` int not null,
+  `cp_id` int NOT NULL,
+   `cb_id` int NOT NULL,
   `amount` int NOT NULL,
   CONSTRAINT order_line_fkey
 		FOREIGN KEY (`ol_id`) 
 		REFERENCES orders(`o_id`)
 		ON DELETE CASCADE
-);
-
-CREATE TABLE `cupcake_line` (
-  `cl_id` int PRIMARY KEY AUTO_INCREMENT,
-  `cp_id` int NOT NULL,
-  `cb_id` int NOT NULL
 );
 
 CREATE TABLE `cupcake_top` (

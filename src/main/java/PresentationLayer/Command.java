@@ -26,6 +26,7 @@ abstract class Command {
         commands.put( "updateOrder", new UpdateOrder() );
         commands.put( "updateUser", new UpdateUser() );
         commands.put( "viewOrder", new ViewOrder() );
+        commands.put("logout",new Logout());
 
     }
 

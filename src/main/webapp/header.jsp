@@ -15,7 +15,25 @@
                     ${"<a href='login.jsp' class= 'navbar-text mr-sm-2'>Login / Registrer</a>"}
                 </c:when>
                 <c:otherwise>
-                   <p class='navbar-brand my-2 my-sm-0'> ${sessionScope.email}</p>
+
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ${sessionScope.email}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="myorders.html">Mine ordre</a>
+                        <div class="dropdown-divider"></div>
+                        <c:choose>
+                            <c:when test="${sessionScope.role}">
+                                <a class="dropdown-item" href="AdminGoesHere">Adminstrator</a>
+                                <div class="dropdown-divider"></div>
+                            </c:when>
+                        </c:choose>
+
+                        <a class="dropdown-item" href="FrontController?target=logout">Logout</a>
+                    </div>
+                </div>
+                    <p>${sessionScope.balance} kr.</p>
                 </c:otherwise>
             </c:choose>
             <c:choose>
@@ -36,7 +54,6 @@
                     </a>
                 </c:otherwise>
             </c:choose>
-
 
         </div>
 
