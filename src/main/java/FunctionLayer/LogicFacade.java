@@ -1,6 +1,7 @@
 package FunctionLayer;
 
 import DBAccess.CupCakeMapper;
+import DBAccess.OrderMapper;
 import DBAccess.UserMapper;
 
 import java.util.ArrayList;
@@ -31,6 +32,10 @@ public class LogicFacade {
 
     public static ArrayList<Topping> getToppings() {
         return CupCakeMapper.getToppings();
+    }
+
+    public static boolean saveOrder(Order order) {
+           return OrderMapper.saveOrder(order);
     }
 
 }
