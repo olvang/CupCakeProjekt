@@ -26,8 +26,8 @@ CREATE TABLE `order_line` (
   `cp_id` int NOT NULL,
    `cb_id` int NOT NULL,
   `amount` int NOT NULL,
-  CONSTRAINT order_line_fkey
-		FOREIGN KEY (`ol_id`) 
+	 CONSTRAINT order_line_fkey
+		FOREIGN KEY (`o_id`) 
 		REFERENCES orders(`o_id`)
 		ON DELETE CASCADE
 );
