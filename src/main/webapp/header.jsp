@@ -33,7 +33,7 @@
                         <a class="dropdown-item" href="FrontController?target=logout">Logout</a>
                     </div>
                 </div>
-                    <p>${sessionScope.balance} kr.</p>
+                    <p class="navbar-text  pt-4">${sessionScope.balance} kr.</p>
                 </c:otherwise>
             </c:choose>
             <c:choose>
