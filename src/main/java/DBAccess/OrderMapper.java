@@ -5,27 +5,31 @@ import FunctionLayer.Order;
 import com.sun.org.apache.xpath.internal.operations.Or;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class OrderMapper {
     public static boolean saveOrder(Order order){
         int id = -1;
         try {
+
             Connection con = Connector.connection();
             String SQL = "INSERT INTO orders (u_id, pick_up_date) VALUES (?, ?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS);
 
-            Date date = java.sql.Date.valueOf(order.getPickupDate().toString());
+            String pattern = "yyyy-MM-dd";
+            SimpleDateFormat formatter = new SimpleDateFormat(pattern);
+            String mysqlDateString = formatter.format(order.getPickupDate());
 
             ps.setInt( 1, order.getUserId());
-            ps.setDate( 2, date);
+            ps.setString( 2, mysqlDateString);
 
-            ps.executeQuery();
+            ps.executeUpdate();
 
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
             id = rs.getInt( 1 );
-
+            System.out.println(order.getOrderlines().size());
             for (CupCake cc: order.getOrderlines()) {
                 String oSQL = "INSERT into order_line (o_id,cp_id,cb_id, amount) VALUES(?, ?, ?, ?)";
                 PreparedStatement ops = con.prepareStatement(oSQL);
@@ -34,8 +38,8 @@ public class OrderMapper {
                 ops.setInt(2,cc.getTopId());
                 ops.setInt(3,cc.getBottomId());
                 ops.setInt(4,cc.getAmount());
-
-                ps.executeQuery();
+                System.out.println("hello");
+                ps.executeUpdate();
             }
 
         } catch (ClassNotFoundException e) {
