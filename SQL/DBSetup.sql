@@ -22,7 +22,6 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `order_line` (
   `ol_id` int PRIMARY KEY AUTO_INCREMENT,
-  `cl_id` int NOT NULL,
   `o_id` int not null,
   `cp_id` int NOT NULL,
    `cb_id` int NOT NULL,
