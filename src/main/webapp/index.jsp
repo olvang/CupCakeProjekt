@@ -19,7 +19,7 @@
 <%
     new ShowFrontPage().execute(request, response);
 %>
-<jsp:include page="header.jsp" />
+<jsp:include page="WEB-INF/includes/header.jsp" />
 <div class="outer">
     <div class="container pagecontainer main border rounded ">
         <h1 class="title">Velkommen ombord! </h1>
@@ -80,7 +80,7 @@
         </div>
     </div>
 
-    <jsp:include page="footer.jsp"></jsp:include>
+    <jsp:include page="WEB-INF/includes/footer.jsp"></jsp:include>
 
 </div>
 

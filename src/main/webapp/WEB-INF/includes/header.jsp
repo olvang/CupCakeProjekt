@@ -21,7 +21,7 @@
                             ${sessionScope.email}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="myorders.html">Mine ordre</a>
+                        <a class="dropdown-item" href="htmlpages/myorders.html">Mine ordre</a>
                         <div class="dropdown-divider"></div>
                         <c:choose>
                             <c:when test="${sessionScope.role}">

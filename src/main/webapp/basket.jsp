@@ -23,7 +23,7 @@
 %>
 
 
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="WEB-INF/includes/header.jsp"></jsp:include>
 <div class="outer">
     <div class="container pagecontainer main border rounded mb-2">
 
@@ -169,7 +169,7 @@
         </div>
     </div>
     </div>
-    <jsp:include page="footer.jsp"></jsp:include>
+    <jsp:include page="WEB-INF/includes/footer.jsp"></jsp:include>
 </c:otherwise>
 </c:choose>
 
