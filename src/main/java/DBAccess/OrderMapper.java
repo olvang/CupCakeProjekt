@@ -66,7 +66,7 @@ public class OrderMapper {
     public static ArrayList<Order> getAllOrdersFromUser(int userID) {
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT orders.o_id, orders.pick_up_date, orders.created_at, count(*) as cupcakes" +
+            String SQL = "SELECT orders.o_id, orders.pick_up_date, orders.created_at, sum(amount) as amount" +
                     "FROM orders" +
                     "LEFT JOIN order_line" +
                     "ON orders.o_id=order_line.o_id" +
