@@ -30,13 +30,11 @@
                 <div class="container px-5">
                     <div class="form-group">
                         <label for="LoginEmail">Email Adresse</label>
-                        <input name="LoginEmail" type="email" class="form-control" id="LoginEmail"
-                               placeholder="Indtast Email" required>
+                        <input name="LoginEmail" type="email" class="form-control" id="LoginEmail" placeholder="Indtast Email" value="someone@nowhere.com" required>
                     </div>
                     <div class="form-group">
                         <label for="LoginPassword">Kodeord</label>
-                        <input id="LoginPassword" name="LoginPassword" type="password" class="form-control"
-                               placeholder="Kodeord" required>
+                        <input id="LoginPassword" name="LoginPassword" type="password" class="form-control" placeholder="Kodeord" value="a1234" required>
                     </div>
                     <button type="submit" class="btn button buttonLogin">Login</button>
                 </div>
