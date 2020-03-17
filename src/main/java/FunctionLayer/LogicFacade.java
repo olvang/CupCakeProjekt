@@ -38,4 +38,9 @@ public class LogicFacade {
         return OrderMapper.saveOrder(order);
     }
 
+    public static Order getOrder(int orderID) throws LoginSampleException {
+        return OrderMapper.getOrder(orderID);
+    }
+
+
 }

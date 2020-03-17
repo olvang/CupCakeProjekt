@@ -1,9 +1,6 @@
 package DBAccess;
 
-import FunctionLayer.CupCake;
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.Order;
-import FunctionLayer.User;
+import FunctionLayer.*;
 import com.sun.org.apache.xpath.internal.operations.Or;
 
 import java.sql.*;
@@ -71,12 +68,40 @@ public class OrderMapper {
                 boolean admin = rs.getBoolean("admin");
                 double balance = rs.getDouble("balance");
                 int userId = rs.getInt("u_id");
+                int orderId = rs.getInt("orders.o_id");
+                Date date = rs.getDate("orders.pick_up_date");
+                Timestamp ts = rs.getTimestamp("orders.created_at");
+                Date createdate = new Date(ts.getTime());
                 User customer = new User(email, admin, balance);
                 customer.setId(userId);
+                order.setOrderId(orderID);
                 order.setCustomer(customer);
-                do {
+                order.setPickupDate(date);
+                order.setOrderDate(createdate);
+
                     //TODO tilføj hver cupcake til ordre. Kataloget skal tjekkes her.
-                }while (rs.next());
+                String SQL1 = "SELECT order_line.cp_id,order_line.cb_id,amount,cp_name,cb_name,cp_price,cb_price FROM olskercupcake.order_line right join cupcake_top on order_line.cp_id = cupcake_top.cp_id right join cupcake_bottom on order_line.cb_id = cupcake_bottom.cb_id where order_line.o_id = ?;";
+                PreparedStatement ps1 = con.prepareStatement(SQL1);
+                ps1.setInt(1, orderID);
+                ResultSet rs1 = ps1.executeQuery();
+                ArrayList<CupCake> cupCakes = new ArrayList<>();
+                while (rs1.next()) {
+                    int cp_id = rs1.getInt("order_line.cp_id");
+                    String cp_name = rs1.getString("cp_name");
+                    double cp_price = rs1.getDouble("cp_price");
+                    Topping topping = new Topping(cp_id, cp_name, cp_price);
+
+                    int cb_id = rs1.getInt("order_line.cb_id");
+                    String cb_name = rs1.getString("cb_name");
+                    double cb_price = rs1.getDouble("cb_price");
+                    Bottom bottom = new Bottom(cb_id, cb_name, cb_price);
+
+                    int amount = rs1.getInt("amount");
+
+                    CupCake cupCake = new CupCake(amount, bottom, topping);
+                    cupCakes.add(cupCake);
+                }
+                order.setOrderlines(cupCakes);
             }else {
                 throw new LoginSampleException( "No order by id" + orderID );
             }

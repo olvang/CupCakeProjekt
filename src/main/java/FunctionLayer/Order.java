@@ -75,5 +75,7 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-
+    public void setOrderlines(ArrayList<CupCake> orderlines) {
+        this.orderlines = orderlines;
+    }
 }
