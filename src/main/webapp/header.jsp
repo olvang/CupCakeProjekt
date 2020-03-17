@@ -21,7 +21,10 @@
             <c:choose>
                 <c:when test="${sessionScope.cupcakeAmount == null}">
                     <a class= "navbar-brand my-2 my-sm-0" href="basket.jsp">
+                <span class="fa-stack fa-lg has-badge" data-count="0">
+                  <i class="fa fa-circle fa-stack-lg fa-inverse"></i>
                   <i style="" class="fa fa-shopping-cart fa-stack-lg"></i>
+                </span>
                     </a>
                 </c:when>
                 <c:otherwise>
