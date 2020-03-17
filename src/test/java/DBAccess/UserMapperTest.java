@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -99,9 +101,60 @@ public class UserMapperTest extends TestDataSetup {
         UserMapper.getUser(22);
     }
 
+    @Test (expected = LoginSampleException.class)
+    public void testGetAllCustomersIfNoCustomers() throws LoginSampleException {
+        try (Statement stmt = Connector.connection().createStatement()) {
+            stmt.execute("TRUNCATE TABLE users;" );
+            UserMapper.getAllCustomers();
+        } catch (SQLException |ClassNotFoundException  e) {
+            e.printStackTrace();
+        }
+    }
+
     @Test
-    public void testGetAllCustomers() throws LoginSampleException {
-        
+    public void testGetAllCustomersBySize() throws LoginSampleException {
+        ArrayList<User> customers = UserMapper.getAllCustomers();
+        int expectedSize = 4;
+        assertEquals(expectedSize, customers.size());
+    }
+
+    @Test
+    public void testUpdateUserNoPassword() throws LoginSampleException {
+        User user = UserMapper.getUser(2);
+        user.setEmail("jensen@gmail.com");
+        user.setBalance(31415);
+
+        UserMapper.updateUser(user);
+        User returnedUser = UserMapper.getUser(2);
+
+        assertEquals(returnedUser.getEmail(), user.getEmail());
+        assertEquals(returnedUser.getBalance(), user.getBalance(), 0.01);
+        assertNull(returnedUser.getPassword());
+    }
+
+    @Test
+    public void testUpdateUserWithPassword() throws LoginSampleException {
+        User user = UserMapper.getUser(2);
+        String email = "jensen@gmail.com";
+        String password = "nytpassword";
+        user.setEmail(email);
+        user.setBalance(1234.56);
+        user.setPassword(password);
+
+        UserMapper.updateUser(user);
+        User returnedUser = UserMapper.login(email, password);
+
+        assertEquals(returnedUser.getEmail(), user.getEmail());
+        assertEquals(returnedUser.getBalance(), user.getBalance(), 0.01);
+        assertEquals(returnedUser.getPassword(), user.getPassword());
+    }
+
+    @Test (expected = LoginSampleException.class)
+    public void testUpdateNonExistingUser() throws LoginSampleException {
+        User user = new User("peter@peter.peter",
+                "peterspassword", true, 2000000);
+        user.setId(23);
+        UserMapper.updateUser(user);
     }
 
 }
