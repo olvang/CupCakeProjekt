@@ -59,7 +59,7 @@ public class Pay extends Command {
                 return "basket";
             }
         } catch (Exception ex) {
-            request.setAttribute("dateError", "Der skete desværre en fejl, prøv igen");
+            request.setAttribute("error", "Der skete desværre en fejl, prøv igen");
             return "basket";
         }
     }
