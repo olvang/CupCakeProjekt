@@ -74,4 +74,8 @@ public class User {
     public ArrayList<User> getAllCustomers(){
         return null;
     }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 }

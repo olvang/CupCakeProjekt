@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Pay extends Command{
+public class Pay extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
@@ -22,10 +22,11 @@ public class Pay extends Command{
         try {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
             date = simpleDateFormat.parse(request.getParameter("date"));
-        }catch(Exception ex) {
+        } catch (Exception ex) {
             request.setAttribute("dateError", "Forkert dato format, prøv igen");
             return "basket";
         }
+
 
 
         try {
@@ -33,21 +34,33 @@ public class Pay extends Command{
             Order order = (Order) session.getAttribute("order");
             order.setCustomer(user);
             order.setPickupDate(date);
-            if(LogicFacade.saveOrder(order)){
+
+
+            //check if user has enough to buy
+            if(order.getPrice() > order.getCustomer().getBalance()){
+                request.setAttribute("error", "Din saldo er for lav til denne ordre");
+                return "basket";
+            }
+
+            //Inserts order to db and "resets"
+            if (LogicFacade.saveOrder(order)) {
+                //Updates the user balance on the session
+                order.getCustomer().setBalance(order.getCustomer().getBalance()-order.getPrice());
+
+                //reset/sets Attributes
+                session.setAttribute( "user", order.getCustomer() );
+                session.setAttribute( "balance", order.getCustomer().getBalance() );
                 session.setAttribute("order", null);
                 session.setAttribute("cupcakeAmount", null);
-                session.setAttribute("successMessage", "Tak for din ordre, vi glæder os til at se dig!");
-            }else{
+                request.setAttribute("orderMessage", "Tak for din ordre, vi glæder os til at se dig!");
+                return "index";
+            } else {
                 request.setAttribute("error", "Kunne ikke indsætte orderen i databasen, prøv igen");
                 return "basket";
             }
-        }catch(Exception ex) {
-            request.setAttribute("dateError", "Forkert dato format, prøv igen");
+        } catch (Exception ex) {
+            request.setAttribute("dateError", "Der skete desværre en fejl, prøv igen");
             return "basket";
         }
-
-        return "index";
-
-
     }
 }

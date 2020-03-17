@@ -103,6 +103,7 @@
                     <td>
                         <form action="FrontController" method="POST">
                             <input type="hidden" name="target" value="pay">
+
                             <!-- TODO find ud af hvordan den her kan centreres på telefon-->
                             <div class="d-flex flex-row justify-content-end align-items-center">
                                 <div class="p-4">
@@ -154,6 +155,13 @@
                         <div class="checkoutbutton">
                             <input type="submit" class="btn btn-primary button" id="pay" value="Betal">
                         </div>
+                        <c:choose>
+                            <c:when test="${requestScope.error != null}">
+                                <div class="alert alert-danger text-center" role="alert">
+                                        ${requestScope.error}
+                                </div>
+                            </c:when>
+                        </c:choose>
                         </form>
                     </c:otherwise>
                 </c:choose>

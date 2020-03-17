@@ -23,6 +23,16 @@
 <div class="outer">
     <div class="container pagecontainer main border rounded ">
         <h1 class="title">Velkommen ombord! </h1>
+        <c:choose>
+            <c:when test="${requestScope.orderMessage != null}">
+                <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+                        ${requestScope.orderMessage}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </c:when>
+        </c:choose>
         <h2 class="subtitle">Øens bedste cupcakes. Vælg og bestil her:</h2>
 
         <div class="container">
