@@ -39,7 +39,7 @@ public class OrderMapper {
                 ops.setInt(3,cc.getBottomId());
                 ops.setInt(4,cc.getAmount());
                 System.out.println("hello");
-                ps.executeUpdate();
+                ops.executeUpdate();
             }
 
         } catch (ClassNotFoundException e) {
