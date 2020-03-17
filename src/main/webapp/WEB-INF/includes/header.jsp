@@ -8,7 +8,6 @@
     <img src="images/Header5.png" class="img-fluid" alt="Responsive image">
 
     <nav class="navbar navbar-light mt-2 pagecontainer">
-        <li></li>
         <a href="index.jsp" class="navbar-text">Forside</a>
         <div class="form-inline my-0">
             <c:choose>
