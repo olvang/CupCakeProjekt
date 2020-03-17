@@ -8,8 +8,9 @@
     <img src="images/Header5.png" class="img-fluid" alt="Responsive image">
 
     <nav class="navbar navbar-light mt-2 pagecontainer">
+        <li></li>
         <a href="index.jsp" class="navbar-text">Forside</a>
-        <div class="form-inline my-4 my-lg-0">
+        <div class="form-inline my-0">
             <c:choose>
                 <c:when test="${sessionScope.email == null}">
                     ${"<a href='login.jsp' class= 'navbar-text mr-sm-2'>Login / Registrer</a>"}
@@ -33,12 +34,12 @@
                         <a class="dropdown-item" href="FrontController?target=logout">Logout</a>
                     </div>
                 </div>
-                    <p class="navbar-text  pt-4">${sessionScope.balance} kr.</p>
+                    <p class="navbar-text my-0">${sessionScope.balance} kr.</p>
                 </c:otherwise>
             </c:choose>
             <c:choose>
                 <c:when test="${sessionScope.cupcakeAmount == null}">
-                    <a class= "navbar-brand my-2 my-sm-0" href="basket.jsp">
+                    <a class= "navbar-brand my-0 my-sm-0" href="basket.jsp">
                 <span class="fa-stack fa-lg has-badge" data-count="0">
                   <i class="fa fa-circle fa-stack-lg fa-inverse"></i>
                   <i style="" class="fa fa-shopping-cart fa-stack-lg"></i>
@@ -46,7 +47,7 @@
                     </a>
                 </c:when>
                 <c:otherwise>
-                    <a class= "navbar-brand my-2 my-sm-0" href="basket.jsp">
+                    <a class= "navbar-brand my-0 my-sm-0" href="basket.jsp">
                 <span class="fa-stack fa-lg has-badge" data-count="${sessionScope.cupcakeAmount}">
                   <i class="fa fa-circle fa-stack-lg fa-inverse"></i>
                   <i style="" class="fa fa-shopping-cart fa-stack-lg"></i>

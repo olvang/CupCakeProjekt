@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.junit.Test;
@@ -54,4 +55,39 @@ public class OrderMapperTest {
 
         OrderMapper.saveOrder(ord);
     }
+
+    @Test
+    public void testGetAllOrdersFromUser() throws LoginSampleException {
+        ArrayList<Order> orders;
+        int expectedSize = 2;
+        int expectedAmount = 6;
+        int expectedId = 4;
+
+        orders = OrderMapper.getAllOrdersFromUser(4);
+
+        assertEquals(expectedSize, orders.size());
+        assertEquals(expectedAmount, orders.get(0).getAmount());
+        assertEquals(expectedId, orders.get(0).getOrderId());
+    }
+
+    @Test (expected = LoginSampleException.class)
+    public void testGetAllOrdersFromNonExistingUser() throws LoginSampleException {
+        OrderMapper.getAllOrdersFromUser(123);
+    }
+
+    @Test
+    public void testGetAllOrders() throws LoginSampleException {
+        ArrayList<Order> orders;
+        int orderToCheck = 2; //orderid 3
+        int expectedSize = 5;
+        int expectedAmount = 4;
+        int expectedOrderId = 3;
+
+        orders = OrderMapper.getAllOrders();
+
+        assertEquals(expectedSize, orders.size());
+        assertEquals(expectedAmount, orders.get(orderToCheck).getAmount());
+        assertEquals(expectedOrderId, orders.get(orderToCheck).getOrderId());
+    }
+
 }

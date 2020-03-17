@@ -68,12 +68,12 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 my-1">
+                        <input type="submit" class="btn btn-primary button addtobasket fade show" value="Føj til kurv">
                         <c:choose>
                             <c:when test="${requestScope.msg != null}">
-                                <label class="alert alert-primary" for="addtobasket">${requestScope.msg}</label>
+                                <div class="alert alert-primary addtobasket">${requestScope.msg}</div>
                             </c:when>
                         </c:choose>
-                        <input type="submit" class="btn btn-primary button" id="addtobasket" value="Føj til kurv">
                     </div>
                 </div>
             </form>

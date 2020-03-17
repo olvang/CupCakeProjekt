@@ -45,3 +45,5 @@ INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,3,9,1);
 INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,4,2,5);
 INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,4,9,5);
 INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,4,3,2);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (1,5,4,1);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (3,5,1,3);

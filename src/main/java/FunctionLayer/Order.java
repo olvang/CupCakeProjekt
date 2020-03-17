@@ -11,35 +11,50 @@ public class Order {
     private User customer;
     private Date pickupDate;
 
+    //Burde vi have en klasse til historiske ordre?
+    //Det ville jo være spild at fylde arraylisten med cupcakes på alle
+    // ordre når brugeren går ind på sin oversigt, da det jo ikke er alle
+    // de vil se. Men det virker også underligt at gemme antal cupcakes som
+    // en int på ordren. Det føles som to forskellige brugssituationer.
+    // hvad tænker i?
+    private int orderId;
+
+    private int amount;
+
     public void addToOrder(Bottom bottom, Topping top, int amount){
         orderlines.add(new CupCake(amount, bottom, top));
     }
 
 
-    public ArrayList<CupCake> getOrderlines() {
-        return orderlines;
-    }
-
     public void deleteFromOrder(int orderlinesPos){
-
+        orderlines.remove(orderlinesPos);
     }
 
-    public void updateOrder(){
 
+    public void setPickupDate(Date pickupDate) {
+        this.pickupDate = pickupDate;
+    }
+    public void setCustomer(User customer) {
+        this.customer = customer;
+    }
+    public void setOrderId(int id) {this.orderId = id;}
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
-    public void removeOrder(){
-
+    public User getCustomer() {
+        return customer;
     }
-
-    public Order getOrder(int orderID){
-        return null;
+    public int getUserId(){
+        return customer.getId();
     }
-
-    public ArrayList<Order> getAllOrders(){
-        return null;
+    public Date getPickupDate() {
+        return pickupDate;
     }
-
+    public int getOrderId() {return orderId;}
+    public int getAmount() {
+        return amount;
+    }
     public double getPrice() {
         double total = 0;
         for(CupCake cupcake : orderlines) {
@@ -47,23 +62,10 @@ public class Order {
         }
         return total;
     }
-
-    public User getCustomer() {
-        return customer;
+    public ArrayList<CupCake> getOrderlines() {
+        return orderlines;
     }
 
-    public void setCustomer(User customer) {
-        this.customer = customer;
-    }
 
-    public Date getPickupDate() {
-        return pickupDate;
-    }
 
-    public void setPickupDate(Date pickupDate) {
-        this.pickupDate = pickupDate;
-    }
-    public int getUserId(){
-        return customer.getId();
-    }
 }
