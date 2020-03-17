@@ -63,4 +63,7 @@ public class Order {
     public void setPickupDate(Date pickupDate) {
         this.pickupDate = pickupDate;
     }
+    public int getUserId(){
+        return customer.getId();
+    }
 }

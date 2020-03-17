@@ -26,6 +26,10 @@ public class CupCake {
         return bottom;
     }
 
+    public int getBottomId(){
+        return bottom.getId();
+    }
+
     public void setBottom(Bottom bottom) {
         this.bottom = bottom;
         calculatePrice();
@@ -33,6 +37,10 @@ public class CupCake {
 
     public Topping getTop() {
         return top;
+    }
+
+    public int getTopId(){
+        return top.getId();
     }
 
     public void setTop(Topping top) {

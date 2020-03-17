@@ -32,13 +32,13 @@ INSERT INTO olskercupcake.orders (u_id,pick_up_date) VALUES (4,'2008-01-01 00:35
 INSERT INTO olskercupcake.orders (u_id,pick_up_date) VALUES (4,'2008-01-01 20:35:11');
 
 TRUNCATE TABLE order_line;
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (1,2,1,1,1);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (2,2,1,2,1);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (3,2,2,2,4);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (4,2,3,5,4);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (5,2,3,9,1);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (6,2,4,2,5);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (7,2,4,9,5);
-INSERT INTO olskercupcake.order_line (cl_id,amount,o_id,cb_id,cp_id) VALUES (8,2,4,3,2);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,1,1,1);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,1,2,1);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,2,2,4);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,3,5,4);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,3,9,1);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,4,2,5);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,4,9,5);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,4,3,2);
 
 set foreign_key_checks=1;
