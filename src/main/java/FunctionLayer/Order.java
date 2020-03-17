@@ -10,6 +10,7 @@ public class Order {
     private ArrayList<CupCake> orderlines = new ArrayList();
     private User customer;
     private Date pickupDate;
+    private Date orderDate;
 
     //Burde vi have en klasse til historiske ordre?
     //Det ville jo være spild at fylde arraylisten med cupcakes på alle
@@ -66,6 +67,13 @@ public class Order {
         return orderlines;
     }
 
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
 
 
 }

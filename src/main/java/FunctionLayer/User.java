@@ -1,5 +1,6 @@
 package FunctionLayer;
 
+import DBAccess.OrderMapper;
 import DBAccess.UserMapper;
 
 import java.util.ArrayList;
@@ -58,8 +59,8 @@ public class User {
         this.id = id;
     }
 
-    public ArrayList<Order> getUserOrders(int userID) {
-        return null;
+    public ArrayList<Order> getUserOrders(int userID) throws LoginSampleException {
+        return OrderMapper.getAllOrdersFromUser(userID);
     }
 
     public double getBalance() {

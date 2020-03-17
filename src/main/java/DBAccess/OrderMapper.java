@@ -149,12 +149,13 @@ public class OrderMapper {
                     int id = rs.getInt("orders.o_id");
                     int amountOfCupcakes = rs.getInt("amount");
                     Date date = rs.getDate("orders.pick_up_date");
-                    //Timestamp ts = rs.getTimestamp("orders.created_at");
+                    Timestamp ts = rs.getTimestamp("orders.created_at");
+                    Date createdate = new Date(ts.getTime());
                     Order order = new Order();
                     order.setOrderId(id);
                     order.setAmount(amountOfCupcakes);
                     order.setPickupDate(date);
-                    //order.setCreationTime(ts);
+                    order.setOrderDate(createdate);
                     orders.add(order);
                 } while(rs.next());
             } else {

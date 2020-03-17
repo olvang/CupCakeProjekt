@@ -44,98 +44,16 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>70 kr.</td>
-                                <td>7</td>
-                                <td>12-03-20</td>
-                                <td>11-03-20</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
-
-                            <tr>
-                                <td>10 kr.</td>
-                                <td>1</td>
-                                <td>05-03-20</td>
-                                <td>13-03-20</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
-
-                            <tr>
-                                <td>55 kr.</td>
-                                <td>12</td>
-                                <td>04-01-19</td>
-                                <td>25-07-05</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td>70 kr.</td>
-                                <td>7</td>
-                                <td>12-03-20</td>
-                                <td>11-03-20</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
-
-                            <tr>
-                                <td>10 kr.</td>
-                                <td>1</td>
-                                <td>05-03-20</td>
-                                <td>13-03-20</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
-
-                            <tr>
-                                <td>55 kr.</td>
-                                <td>12</td>
-                                <td>04-01-19</td>
-                                <td>25-07-05</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td>70 kr.</td>
-                                <td>7</td>
-                                <td>12-03-20</td>
-                                <td>11-03-20</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
-
-                            <tr>
-                                <td>10 kr.</td>
-                                <td>1</td>
-                                <td>05-03-20</td>
-                                <td>13-03-20</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
-
-                            <tr>
-                                <td>55 kr.</td>
-                                <td>12</td>
-                                <td>04-01-19</td>
-                                <td>25-07-05</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <td>70 kr.</td>
-                                <td>7</td>
-                                <td>12-03-20</td>
-                                <td>11-03-20</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
-
-                            <tr>
-                                <td>10 kr.</td>
-                                <td>1</td>
-                                <td>05-03-20</td>
-                                <td>13-03-20</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
-
-                            <tr>
-                                <td>55 kr.</td>
-                                <td>12</td>
-                                <td>04-01-19</td>
-                                <td>25-07-05</td>
-                                <td class="orderviewbutton"><i class="fas fa-eye"></i></td>
-                            </tr>
+                            <c:forEach var="order" items="${requestScope.orders}">
+                                <tr>
+                                    <td>${order.price}</td>
+                                    <td>${order.amount}</td>
+                                    <td>${order.pickupDate}</td>
+                                    <td>${order.orderDate}</td>
+                                    <td class="orderviewbutton"><a href="vieworder.jsp?o=${order.orderId}"><i
+                                            class="fas fa-eye"></i></a></td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>

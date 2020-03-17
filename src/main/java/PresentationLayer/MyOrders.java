@@ -1,9 +1,6 @@
 package PresentationLayer;
 
-import FunctionLayer.Bottom;
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.TopAndBottoms;
-import FunctionLayer.Topping;
+import FunctionLayer.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,8 +11,26 @@ public class MyOrders extends Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
+        User user;
 
+        try {
+            user = (User) session.getAttribute("user");
 
-        return "WEB-INF/my_orders";
+        } catch (Exception ex) {
+            //Not logged in
+            return "index";
+        }
+
+        try {
+            ArrayList<Order> orders = user.getUserOrders(user.getId());
+            request.setAttribute("orders", orders);
+
+        } catch (Exception ex) {
+            //TODO Exception
+
+            return "index";
+        }
+
+        return "myorders";
     }
 }
