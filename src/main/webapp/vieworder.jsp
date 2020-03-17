@@ -38,7 +38,9 @@
                 <td>
                     <a href="myorders.jsp">
                         <div class="col-1">
-                            <button type="button" class="btn btn-lg button">Tilbage</button>
+                            <a href="myorders.jsp">
+                                <button type="button" class="btn btn-lg button">Tilbage</button>
+                            </a>
                         </div>
                     </a>
                 </td>

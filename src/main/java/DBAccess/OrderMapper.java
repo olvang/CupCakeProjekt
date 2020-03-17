@@ -64,6 +64,7 @@ public class OrderMapper {
             ResultSet rs = ps.executeQuery();
 
             if(rs.next()) {
+                //Get order
                 String email = rs.getString("email");
                 boolean admin = rs.getBoolean("admin");
                 double balance = rs.getDouble("balance");
@@ -72,29 +73,38 @@ public class OrderMapper {
                 Date date = rs.getDate("orders.pick_up_date");
                 Timestamp ts = rs.getTimestamp("orders.created_at");
                 Date createdate = new Date(ts.getTime());
+
+                //Set customer
                 User customer = new User(email, admin, balance);
                 customer.setId(userId);
+
+                //Set order
                 order.setOrderId(orderID);
                 order.setCustomer(customer);
                 order.setPickupDate(date);
                 order.setOrderDate(createdate);
 
-                    //TODO tilføj hver cupcake til ordre. Kataloget skal tjekkes her.
+
+                //Get all orderlines from db
                 String SQL1 = "SELECT order_line.cp_id,order_line.cb_id,amount,cp_name,cb_name,cp_price,cb_price FROM olskercupcake.order_line right join cupcake_top on order_line.cp_id = cupcake_top.cp_id right join cupcake_bottom on order_line.cb_id = cupcake_bottom.cb_id where order_line.o_id = ?;";
                 PreparedStatement ps1 = con.prepareStatement(SQL1);
                 ps1.setInt(1, orderID);
                 ResultSet rs1 = ps1.executeQuery();
                 ArrayList<CupCake> cupCakes = new ArrayList<>();
+
                 while (rs1.next()) {
+                    //Cupcake top
                     int cp_id = rs1.getInt("order_line.cp_id");
                     String cp_name = rs1.getString("cp_name");
                     double cp_price = rs1.getDouble("cp_price");
                     Topping topping = new Topping(cp_id, cp_name, cp_price);
 
+                    //Cupcake bottom
                     int cb_id = rs1.getInt("order_line.cb_id");
                     String cb_name = rs1.getString("cb_name");
                     double cb_price = rs1.getDouble("cb_price");
                     Bottom bottom = new Bottom(cb_id, cb_name, cb_price);
+
 
                     int amount = rs1.getInt("amount");
 
@@ -133,12 +143,17 @@ public class OrderMapper {
                     int id = rs.getInt("orders.o_id");
                     int amountOfCupcakes = rs.getInt("amount");
                     Date date = rs.getDate("orders.pick_up_date");
-                    //Timestamp ts = rs.getTimestamp("orders.created_at");
+
+                    //Timestamp to date format
+                    Timestamp ts = rs.getTimestamp("orders.created_at");
+                    Date createdate = new Date(ts.getTime());
+
                     Order order = new Order();
                     order.setOrderId(id);
                     order.setAmount(amountOfCupcakes);
                     order.setPickupDate(date);
-                    //order.setCreationTime(ts);
+                    order.setOrderDate(createdate);
+
                     orders.add(order);
                 } while(rs.next());
             } else {
@@ -174,8 +189,11 @@ public class OrderMapper {
                     int id = rs.getInt("orders.o_id");
                     int amountOfCupcakes = rs.getInt("amount");
                     Date date = rs.getDate("orders.pick_up_date");
+
+                    //Timestamp to date format
                     Timestamp ts = rs.getTimestamp("orders.created_at");
                     Date createdate = new Date(ts.getTime());
+
                     Order order = new Order();
                     order.setOrderId(id);
                     order.setAmount(amountOfCupcakes);
