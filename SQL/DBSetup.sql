@@ -17,6 +17,7 @@ CREATE TABLE `orders` (
   `o_id` int PRIMARY KEY AUTO_INCREMENT,
   `u_id` int NOT NULL,
   `pick_up_date`DATE not null,
+  `price` double not null,
   `created_at` timestamp default CURRENT_TIMESTAMP
 );
 
