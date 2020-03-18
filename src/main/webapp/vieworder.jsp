@@ -1,4 +1,7 @@
-<%@ page import="PresentationLayer.ViewOrder" %><%--
+<%@ page import="PresentationLayer.ViewOrder" %>
+<%@ page import="FunctionLayer.User" %>
+<%@ page import="FunctionLayer.LogicFacade" %>
+<%@ page import="FunctionLayer.Order" %><%--
   Created by IntelliJ IDEA.
   User: Oliver
   Date: 16/03/2020
@@ -7,17 +10,28 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <%
-    if (request.getParameter("o") == null) {
+    User userLoggedIn = (User) session.getAttribute("user");
+    Order order = LogicFacade.getOrder(Integer.parseInt(request.getParameter("o")));
+    //Hvis o ikke er sat er der ikke valgt en ordre
+    //Så smider den en hen til index, med en fejl
+    if (order == null) {
         request.setAttribute("adminalert", "Den valgte ordre findes ikke");
         response.sendRedirect("index.jsp");
-    } else if (session.getAttribute("user") == null) {
+    //Hvis user er null er man ikke logget ind
+    //Så smider den en hen til login, med en fejl
+
+    } else if (userLoggedIn == null || !order.getCustomer().getEmail().equals(userLoggedIn.getEmail()) && !userLoggedIn.isAdmin()) {
         request.setAttribute("adminalert", "Du skal være logget ind for at se den valgte side");
         response.sendRedirect("login.jsp");
     } else {
         new ViewOrder().execute(request, response);
     }
+
 %>
+
 
 <html lang="en">
 <html>

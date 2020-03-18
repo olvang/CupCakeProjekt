@@ -1,8 +1,5 @@
 package FunctionLayer;
 
-import DBAccess.OrderMapper;
-import com.sun.org.apache.xpath.internal.operations.Or;
-
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -19,8 +16,8 @@ public class Order {
     // en int på ordren. Det føles som to forskellige brugssituationer.
     // hvad tænker i?
     private int orderId;
-
     private int amount;
+    private double manualPrice;
 
     public void addToOrder(Bottom bottom, Topping top, int amount){
         orderlines.add(new CupCake(amount, bottom, top));
@@ -42,6 +39,9 @@ public class Order {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+    public void setPrice(double price) {
+        this.manualPrice = price;
+    }
 
     public User getCustomer() {
         return customer;
@@ -57,6 +57,9 @@ public class Order {
         return amount;
     }
     public double getPrice() {
+        if(orderlines.isEmpty()) {
+            return manualPrice;
+        }
         double total = 0;
         for(CupCake cupcake : orderlines) {
             total += cupcake.getPrice();
