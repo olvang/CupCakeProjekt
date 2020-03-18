@@ -127,7 +127,7 @@ public class OrderMapper {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT orders.o_id, orders.pick_up_date, orders.created_at, sum(amount) as amount, " +
-                    "users.email" +
+                    "users.email " +
                     "FROM orders " +
                     "LEFT JOIN order_line " +
                     "ON orders.o_id=order_line.o_id " +

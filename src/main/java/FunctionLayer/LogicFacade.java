@@ -50,5 +50,8 @@ public class LogicFacade {
         UserMapper.updateUser(user);
     }
 
+    public static ArrayList<Order> getAllOrders() throws LoginSampleException {
+        return OrderMapper.getAllOrders();
+    }
 
 }
