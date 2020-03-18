@@ -216,4 +216,19 @@ public class OrderMapper {
         }
         return orders;
     }
+
+    public static void removeOrder(int orderId) {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "DELETE FROM orders where o_id = ?";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, orderId);
+            ps.executeUpdate();
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

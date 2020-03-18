@@ -57,4 +57,8 @@ public class LogicFacade {
     public static ArrayList<Order> getAllOrdersFromUser(int userID) throws LoginSampleException {
         return OrderMapper.getAllOrdersFromUser(userID);
     }
+
+    public static void removeOrder(int orderId) {
+        OrderMapper.removeOrder(orderId);
+    }
 }
