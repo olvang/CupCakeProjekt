@@ -35,7 +35,6 @@ public class ViewOrder extends Command{
                 request.setAttribute("orderlines", orderlines);
                 //Selve logikken slut
 
-                response.sendRedirect("vieworder.jsp");
                 return "vieworder";
             }
 
