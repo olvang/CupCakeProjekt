@@ -21,7 +21,7 @@ public class OrderMapper {
 
             ps.setInt( 1, order.getUserId());
             ps.setString( 2, mysqlDateString);
-            ps.setDouble( 2, order.getPrice());
+            ps.setDouble( 3, order.getPrice());
 
             ps.executeUpdate();
 
@@ -127,7 +127,7 @@ public class OrderMapper {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT orders.o_id, orders.pick_up_date, orders.created_at, sum(amount) as amount, " +
-                    "users.email " +
+                    "users.email, orders.price " +
                     "FROM orders " +
                     "LEFT JOIN order_line " +
                     "ON orders.o_id=order_line.o_id " +
@@ -146,6 +146,7 @@ public class OrderMapper {
                     int amountOfCupcakes = rs.getInt("amount");
                     Date date = rs.getDate("orders.pick_up_date");
                     String email = rs.getString("users.email");
+                    double price = rs.getDouble("orders.price");
 
                     //Timestamp to date format
                     Timestamp ts = rs.getTimestamp("orders.created_at");
@@ -158,8 +159,9 @@ public class OrderMapper {
                     order.setPickupDate(date);
                     order.setOrderDate(createdate);
                     order.setCustomer(user);
-
+                    order.setPrice(price);
                     orders.add(order);
+
                 } while(rs.next());
             } else {
                 throw new LoginSampleException( " No orders! ");
@@ -176,7 +178,7 @@ public class OrderMapper {
         ArrayList<Order> orders = new ArrayList();
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT orders.o_id, orders.pick_up_date, orders.created_at, sum(amount) as amount " +
+            String SQL = "SELECT orders.o_id, orders.pick_up_date, orders.created_at, sum(amount) as amount, orders.price " +
                     "FROM orders " +
                     "LEFT JOIN order_line " +
                     "ON orders.o_id=order_line.o_id " +
@@ -194,6 +196,7 @@ public class OrderMapper {
                     int id = rs.getInt("orders.o_id");
                     int amountOfCupcakes = rs.getInt("amount");
                     Date date = rs.getDate("orders.pick_up_date");
+                    double price = rs.getDouble("orders.price");
 
                     //Timestamp to date format
                     Timestamp ts = rs.getTimestamp("orders.created_at");
@@ -204,6 +207,8 @@ public class OrderMapper {
                     order.setAmount(amountOfCupcakes);
                     order.setPickupDate(date);
                     order.setOrderDate(createdate);
+                    order.setPrice(price);
+
                     orders.add(order);
                 } while(rs.next());
             } else {

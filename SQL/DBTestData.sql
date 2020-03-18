@@ -30,11 +30,11 @@ INSERT INTO `olskercupcake`.`cupcake_top` (`cp_price`,`cp_name`) VALUES (8.00,'L
 INSERT INTO `olskercupcake`.`cupcake_top` (`cp_price`,`cp_name`) VALUES (9.00,'Blue cheese');
 
 
-INSERT INTO olskercupcake.orders (u_id,pick_up_date) VALUES (1,'2008-01-01 00:00:01');
-INSERT INTO olskercupcake.orders (u_id,pick_up_date) VALUES (2,'2008-01-01 10:00:01');
-INSERT INTO olskercupcake.orders (u_id,pick_up_date) VALUES (3,'2008-01-01 20:00:01');
-INSERT INTO olskercupcake.orders (u_id,pick_up_date) VALUES (4,'2008-01-01 00:35:01');
-INSERT INTO olskercupcake.orders (u_id,pick_up_date) VALUES (4,'2008-01-01 20:35:11');
+INSERT INTO olskercupcake.orders (u_id,pick_up_date, price) VALUES (1,'2008-01-01 00:00:01','3.14');
+INSERT INTO olskercupcake.orders (u_id,pick_up_date, price) VALUES (2,'2008-01-01 10:00:01','3.14');
+INSERT INTO olskercupcake.orders (u_id,pick_up_date, price) VALUES (3,'2008-01-01 20:00:01','3.14');
+INSERT INTO olskercupcake.orders (u_id,pick_up_date, price) VALUES (4,'2008-01-01 00:35:01','3.14');
+INSERT INTO olskercupcake.orders (u_id,pick_up_date, price) VALUES (4,'2008-01-01 20:35:11','3.14');
 
 
 INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (2,1,1,1);
