@@ -8,7 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
-    if (request.getParameter("o") == null || session.getAttribute("user") == null) {
+    if (request.getParameter("o") == null) {
+        request.setAttribute("adminalert", "Den valgte ordre findes ikke");
+        response.sendRedirect("index.jsp");
+    } else if (session.getAttribute("user") == null) {
+        request.setAttribute("adminalert", "Du skal være logget ind for at se den valgte side");
         response.sendRedirect("login.jsp");
     } else {
         new ViewOrder().execute(request, response);

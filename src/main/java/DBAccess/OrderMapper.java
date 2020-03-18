@@ -84,7 +84,6 @@ public class OrderMapper {
                 order.setPickupDate(date);
                 order.setOrderDate(createdate);
 
-
                 //Get all orderlines from db
                 String SQL1 = "SELECT order_line.cp_id,order_line.cb_id,amount,cp_name,cb_name,cp_price,cb_price FROM olskercupcake.order_line right join cupcake_top on order_line.cp_id = cupcake_top.cp_id right join cupcake_bottom on order_line.cb_id = cupcake_bottom.cb_id where order_line.o_id = ?;";
                 PreparedStatement ps1 = con.prepareStatement(SQL1);
