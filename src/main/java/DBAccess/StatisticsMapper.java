@@ -1,12 +1,15 @@
 package DBAccess;
 
 import FunctionLayer.Staistics;
+import FunctionLayer.Utility;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class StatisticsMapper {
 
@@ -144,5 +147,36 @@ public class StatisticsMapper {
         }
 
         return list;
+    }
+    public static Map<Integer,Integer> getOrdersByMonth(int year){
+        Map<Integer,Integer> map = Utility.populateMap();
+            try {
+
+                Connection con = Connector.connection();
+
+                String SQL = "SELECT YEAR(created_at) as SalesYear,\n" +
+                        "         MONTH(created_at) as SalesMonth,\n" +
+                        "         SUM(price) AS TotalSales,\n" +
+                        "         count(*) as TotalOrders\n" +
+                        "    FROM orders\n" +
+                        "    where YEAR(created_at) = ?\n" +
+                        "GROUP BY YEAR(created_at), MONTH(created_at)\n" +
+                        "ORDER BY YEAR(created_at), MONTH(created_at)";
+
+                PreparedStatement ps = con.prepareStatement(SQL);
+                ps.setInt( 1, year);
+                ResultSet rs = ps.executeQuery();
+
+                while( rs.next() ) {
+                    map.put(rs.getInt("SalesMonth"),rs.getInt("TotalSales"));
+                }
+
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            return map;
     }
 }

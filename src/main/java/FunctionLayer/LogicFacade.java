@@ -6,6 +6,7 @@ import DBAccess.StatisticsMapper;
 import DBAccess.UserMapper;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * The purpose of LogicFacade is to...
@@ -78,7 +79,9 @@ public class LogicFacade {
     public static ArrayList<Staistics> getLast5() {
         return StatisticsMapper.getLast5();
     }
-
+    public static Map<Integer,Integer> getOrdersByMonth(int year){
+        return StatisticsMapper.getOrdersByMonth(year);
+    }
     public static void removeOrder ( int orderId){
             OrderMapper.removeOrder(orderId);
     }

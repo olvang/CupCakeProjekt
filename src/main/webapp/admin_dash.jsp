@@ -77,7 +77,8 @@
                         <tbody>
                         <c:forEach var="stats" items="${requestScope.last5}">
                             <tr>
-                                <th scope="row">${stats.o_id}</th>
+                                <th scope="row"><a href="vieworder.jsp?o=${stats.o_id}"><i
+                                        class="fas fa-eye"></i></a></th>
                                 <td>${stats.email}</td>
                                 <td>${stats.price}</td>
                                 <td>${stats.amountOfCupcakes}</td>
@@ -88,7 +89,7 @@
                     </table>
                 </div>
                 <div class="col">
-                    <h4>Ordre i år</h4>
+                    <h4>Omsætning i år</h4>
                     <div class="card">
                         <div class="card-body">
                             <canvas id="chLine"></canvas>
@@ -117,9 +118,11 @@
     /* large line chart */
     var chLine = document.getElementById("chLine");
     var chartData = {
-        labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"],
+        labels: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"],
         datasets: [{
-            data: [589, 445, 483, 503, 689, 692, 634],
+            data: [<c:forEach var="month" items="${requestScope.OrdersByMonth}">
+                    <c:out value="${month.value}"/>,
+                </c:forEach>],
             backgroundColor: 'transparent',
             borderColor: "#007bff",
             borderWidth: 4,
