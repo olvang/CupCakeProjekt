@@ -1,5 +1,7 @@
 package DBAccess;
 
+import FunctionLayer.Staistics;
+import com.sun.org.glassfish.external.statistics.Statistic;
 import org.junit.Before;
 import org.junit.Test;
 import testsetup.TestDataSetup;
@@ -57,5 +59,21 @@ public class StatisticsMapperTest extends TestDataSetup {
         int actual = StatisticsMapper.getAmountOfUsers();
 
         assertEquals( expected,actual);
+    }
+    @Test
+    public void testTotalSale() {
+        int expected = 260;
+        int actual = StatisticsMapper.getTotalSale();
+
+        assertEquals( expected,actual);
+    }
+    @Test
+    public void testGetLast5(){
+        int expected = 5;
+        int actual = StatisticsMapper.getLast5().size();
+        for (Staistics stats: StatisticsMapper.getLast5()) {
+            System.out.println(stats);
+        }
+        assertEquals(expected,actual);
     }
 }

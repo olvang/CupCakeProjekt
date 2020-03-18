@@ -28,7 +28,7 @@
                 <div class="card bg-c-blue order-card">
                     <div class="card-block">
                         <h6 class="m-b-20">Antal Ordre</h6>
-                        <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>486</span></h2>
+                        <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>${requestScope.amountOfOrders}</span></h2>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 <div class="card bg-c-green order-card">
                     <div class="card-block">
                         <h6 class="m-b-20">Antal CupCakes</h6>
-                        <h2 class="text-right"><i class="fa fa-birthday-cake f-left"></i><span>486</span></h2>
+                        <h2 class="text-right"><i class="fa fa-birthday-cake f-left"></i><span>${requestScope.amountOfCupcakes}</span></h2>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 <div class="card bg-c-yellow order-card">
                     <div class="card-block">
                         <h6 class="m-b-20">Antal Brugere</h6>
-                        <h2 class="text-right"><i class="fa fa-users f-left"></i><span>486</span></h2>
+                        <h2 class="text-right"><i class="fa fa-users f-left"></i><span>${requestScope.amountOfUsers}</span></h2>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 <div class="card bg-c-pink order-card">
                     <div class="card-block">
                         <h6 class="m-b-20">$$$ Lavet</h6>
-                        <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>486</span></h2>
+                        <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>${requestScope.totalSale}</span></h2>
                     </div>
                 </div>
             </div>
@@ -69,30 +69,21 @@
                         <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Bib</th>
-                            <th scope="col">Bob</th>
-                            <th scope="col">Bab</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">pris</th>
+                            <th scope="col">cup cakes</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        <c:forEach var="stats" items="${requestScope.last5}">
+                            <tr>
+                                <th scope="row">${stats.o_id}</th>
+                                <td>${stats.email}</td>
+                                <td>${stats.price}</td>
+                                <td>${stats.amountOfCupcakes}</td>
+                            </tr>
+                        </c:forEach>
+
                         </tbody>
                     </table>
                 </div>

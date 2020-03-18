@@ -2,6 +2,7 @@ package FunctionLayer;
 
 import DBAccess.CupCakeMapper;
 import DBAccess.OrderMapper;
+import DBAccess.StatisticsMapper;
 import DBAccess.UserMapper;
 
 import java.util.ArrayList;
@@ -56,5 +57,20 @@ public class LogicFacade {
 
     public static ArrayList<Order> getAllOrdersFromUser(int userID) throws LoginSampleException {
         return OrderMapper.getAllOrdersFromUser(userID);
+    }
+    public static int getAmountOfOrders(){
+        return StatisticsMapper.getAmountOfOrders();
+    }
+    public static int getAmountOfCupcakes(){
+        return StatisticsMapper.getAmountOfCupcakes();
+    }
+    public static int getAmountOfUsers(){
+        return StatisticsMapper.getAmountOfUsers();
+    }
+    public static int getTotalSale(){
+        return StatisticsMapper.getTotalSale();
+    }
+    public static ArrayList<Staistics> getLast5(){
+        return StatisticsMapper.getLast5();
     }
 }
