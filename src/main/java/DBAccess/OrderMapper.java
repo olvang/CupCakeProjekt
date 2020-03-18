@@ -126,11 +126,13 @@ public class OrderMapper {
         ArrayList<Order> orders = new ArrayList();
         try {
             Connection con = Connector.connection();
-            //TODO select email from the customer as well
-            String SQL = "SELECT orders.o_id, orders.pick_up_date, orders.created_at, sum(amount) as amount " +
+            String SQL = "SELECT orders.o_id, orders.pick_up_date, orders.created_at, sum(amount) as amount, " +
+                    "users.email" +
                     "FROM orders " +
                     "LEFT JOIN order_line " +
                     "ON orders.o_id=order_line.o_id " +
+                    "LEFT JOIN users " +
+                    "ON orders.u_id=users.u_id " +
                     "GROUP BY order_line.o_id " +
                     "ORDER BY o_id ASC;";
             PreparedStatement ps = con.prepareStatement(SQL);
@@ -143,16 +145,19 @@ public class OrderMapper {
                     int id = rs.getInt("orders.o_id");
                     int amountOfCupcakes = rs.getInt("amount");
                     Date date = rs.getDate("orders.pick_up_date");
+                    String email = rs.getString("users.email");
 
                     //Timestamp to date format
                     Timestamp ts = rs.getTimestamp("orders.created_at");
                     Date createdate = new Date(ts.getTime());
 
+                    User user = new User(email, false, -1);
                     Order order = new Order();
                     order.setOrderId(id);
                     order.setAmount(amountOfCupcakes);
                     order.setPickupDate(date);
                     order.setOrderDate(createdate);
+                    order.setCustomer(user);
 
                     orders.add(order);
                 } while(rs.next());

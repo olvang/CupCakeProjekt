@@ -26,8 +26,8 @@ abstract class Command {
         commands.put( "updateOrder", new UpdateOrder() );
         commands.put( "updateUser", new UpdateUser() );
         commands.put( "viewOrder", new ViewOrder() );
-        commands.put("logout",new Logout());
-
+        commands.put( "logout", new Logout());
+        commands.put( "beginEditUser", new BeginEditUser());
     }
 
     static Command from( HttpServletRequest request ) {
