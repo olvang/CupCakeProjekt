@@ -38,6 +38,7 @@
                             <table class="table table-bordered table-hover" id="table">
                                 <thead class="tablehead">
                                 <tr>
+                                    <th scope="col">Email</th>
                                     <th scope="col">ID</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Kodeord</th>
@@ -52,6 +53,8 @@
 
                                         <c:forEach var="user" items="${sessionScope.users}">
                                             <tr>
+                                                <!-- first user.email is used for searching while editing, not visible to user -->
+                                                <td>${user.email}</td>
                                                 <td>${user.id}</td>
                                                 <td>${user.email}</td>
                                                 <td>********</td>
@@ -61,6 +64,7 @@
                                                         <button type="submit" class="btn btn-success"><i class="fas fa-edit"></i></button>
                                                         <input type="hidden" name="target" value="beginEditUser">
                                                         <input type="hidden" name="userID" value="${user.id}">
+                                                        <input type="hidden" name="userEmail" value="${user.email}">
 
                                                     </form>
 
@@ -74,6 +78,8 @@
                                                 <c:choose>
                                                     <c:when test="${user.id == requestScope.IDToEdit}">
                                                         <form action="FrontController" method="POST">
+                                                            <!-- first user.email is used for searching while editing, not visible to user -->
+                                                            <td>${user.email}</td>
                                                             <td>${user.id}</td>
                                                             <td><input type="email" value="${user.email}" name="editedEmail"></td>
                                                             <td><input type="password" placeholder="********" name="editedPassword"></td>
@@ -88,6 +94,8 @@
                                                         </form>
                                                     </c:when>
                                                     <c:otherwise>
+                                                        <!-- first user.email is used for searching while editing, not visible to user -->
+                                                        <td>${user.email}</td>
                                                         <td>${user.id}</td>
                                                         <td>${user.email}</td>
                                                         <td>********</td>
@@ -96,6 +104,8 @@
                                                             <form action="FrontController" method="POST">
                                                                 <button type="submit" class="btn btn-success" disabled><i class="fas fa-edit"></i></button>
                                                                 <input type="hidden" name="target" value="beginEditUser">
+                                                                <input type="hidden" name="userEmail"
+                                                                       value="${user.email}">
                                                                 <input type="hidden" name="userID" value="${user.id}">
                                                             </form>
                                                         </td>
@@ -125,19 +135,58 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/fc-3.3.0/fh-3.1.6/r-2.2.3/datatables.min.js"></script>
-<script>
-    $(document).ready(function() {
-        var table = $('#table').DataTable({
-            "ordering": false,
-            "columnDefs": [{
-                "width": "2%",
-                "targets": 4
-            }]
-        });
 
-        new $.fn.dataTable.FixedHeader(table);
-    });
+<script>
+
 </script>
+
+<c:choose>
+    <c:when test="${userEmail != null}">
+        <script>
+            $(document).ready(function () {
+                var table = $('#table').DataTable({
+                    "ordering": false,
+                    "search": {
+                        "search": "${userEmail}"
+                    },
+                    "columnDefs": [{
+                        "width": "2%",
+                        "targets": 5
+                    },
+                        {
+                            "targets": [0],
+                            "visible": false,
+                            "searchable": true
+                        }
+
+                    ]
+                });
+
+                new $.fn.dataTable.FixedHeader(table);
+            });
+        </script>
+    </c:when>
+    <c:otherwise>
+        <script>
+            $(document).ready(function () {
+                var table = $('#table').DataTable({
+                    "ordering": false,
+                    "columnDefs": [{
+                        "width": "2%",
+                        "targets": 4
+                    },
+                        {
+                            "targets": [0],
+                            "visible": false,
+                            "searchable": false
+                        }]
+                });
+
+                new $.fn.dataTable.FixedHeader(table);
+            });
+        </script>
+    </c:otherwise>
+</c:choose>
 </body>
 
 </html>
