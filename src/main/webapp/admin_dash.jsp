@@ -124,8 +124,7 @@
             borderColor: "#007bff",
             borderWidth: 4,
             pointBackgroundColor: "#007bff"
-        }
-        ]
+        }]
     };
     if (chLine) {
         new Chart(chLine, {

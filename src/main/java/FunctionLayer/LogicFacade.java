@@ -78,7 +78,7 @@ public class LogicFacade {
     public static ArrayList<Staistics> getLast5() {
         return StatisticsMapper.getLast5();
     }
-    
+
     public static void removeOrder ( int orderId){
             OrderMapper.removeOrder(orderId);
     }
