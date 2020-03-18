@@ -75,7 +75,8 @@
 <script>
     $(document).ready(function() {
         var table = $('#table').DataTable({
-            "ordering": false,
+            "ordering": true,
+            "order": [[3, "desc"]],
             "columnDefs": [{
                 "width": "2%",
                 "targets": 4
