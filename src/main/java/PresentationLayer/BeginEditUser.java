@@ -13,6 +13,7 @@ public class BeginEditUser extends Command {
         String IDToEdit = request.getParameter("userID");
         request.setAttribute("IDToEdit", IDToEdit);
 
+        //TODO remember to change this when refactoring admin pages into WEB-INF
         return "admin_customers";
     }
 }

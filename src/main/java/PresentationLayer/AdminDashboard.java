@@ -15,7 +15,7 @@ public class AdminDashboard extends Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
-
+        //TODO remember to change this when refactoring admin pages into WEB-INF
         return "admin_dash";
     }
 }

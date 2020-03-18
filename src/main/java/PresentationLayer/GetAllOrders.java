@@ -25,6 +25,7 @@ public class GetAllOrders extends Command{
             return "index";
         }
 
+        //TODO remember to change this when refactoring admin pages into WEB-INF
         return "admin_orders";
     }
 }

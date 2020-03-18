@@ -17,6 +17,8 @@ public class GetAllCustomers extends Command{
         HttpSession session = request.getSession();
         session.setAttribute("users", users);
 
+
+        //TODO remember to change this when refactoring admin pages into WEB-INF
         return "admin_customers";
     }
 }

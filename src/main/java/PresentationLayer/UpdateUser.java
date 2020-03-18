@@ -35,6 +35,7 @@ public class UpdateUser extends Command{
         users.get(count).setBalance(balance);
         users.get(count).setEmail(email);
 
+        //TODO remember to change this when refactoring admin pages into WEB-INF
         return "admin_customers";
     }
 }
