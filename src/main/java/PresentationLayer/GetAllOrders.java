@@ -16,6 +16,10 @@ public class GetAllOrders extends Command{
     public String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
 
+        if(session.getAttribute("role") == null || (boolean) session.getAttribute("role") == false) {
+            request.setAttribute("adminalert", "Du har ikke tilladelse til at se denne side.");
+            return "index";
+        }
         try {
             ArrayList<Order> orders = LogicFacade.getAllOrders();
             request.setAttribute("orders", orders);

@@ -15,9 +15,11 @@ public class GetAllCustomers extends Command{
     public String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         ArrayList<User> users = LogicFacade.getAllCustomers();
         HttpSession session = request.getSession();
+        if(session.getAttribute("role") == null || (boolean) session.getAttribute("role") == false) {
+            request.setAttribute("adminalert", "Du har ikke tilladelse til at se denne side.");
+            return "index";
+        }
         session.setAttribute("users", users);
-
-
         //TODO remember to change this when refactoring admin pages into WEB-INF
         return "admin_customers";
     }
