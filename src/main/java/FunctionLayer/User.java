@@ -60,7 +60,7 @@ public class User {
     }
 
     public ArrayList<Order> getUserOrders(int userID) throws LoginSampleException {
-        return OrderMapper.getAllOrdersFromUser(userID);
+        return LogicFacade.getAllOrdersFromUser(userID);
     }
 
     public double getBalance() {
@@ -68,7 +68,7 @@ public class User {
     }
 
     public void updateUser(User user) throws LoginSampleException {
-        UserMapper.updateUser(user);
+        LogicFacade.updateUser(user);
     }
 
     public User getUser(int userID) {
