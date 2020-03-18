@@ -33,6 +33,10 @@ public class ViewOrder extends Command {
                 session.setAttribute("cupcakeTotalAmount", cupcakeAmount);
                 request.setAttribute("order", order);
                 request.setAttribute("orderlines", orderlines);
+
+                String arrivedFrom = request.getParameter("from");
+                System.out.println("Arrived from: " + arrivedFrom);
+                request.setAttribute("targetpage", arrivedFrom); //tager parameter fra url og lægger i request
                 //Selve logikken slut
 
                 return "vieworder";

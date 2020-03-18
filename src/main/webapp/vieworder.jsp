@@ -46,7 +46,7 @@
                 <td>
                     <a href="myorders.jsp">
                         <div class="col-1">
-                            <a href="myorders.jsp">
+                            <a href="${requestScope.targetpage}.jsp">
                                 <button type="button" class="btn btn-lg button">Tilbage</button>
                             </a>
                         </div>

@@ -51,7 +51,7 @@
                                         <td>${order.amount}</td>
                                         <td>${order.pickupDate}</td>
                                         <td>${order.orderDate}</td>
-                                        <td class="orderviewbutton"><a href="vieworder.jsp?o=${order.orderId}"><i
+                                        <td class="orderviewbutton"><a href="vieworder.jsp?o=${order.orderId}&from=myorders"><i
                                                 class="fas fa-eye"></i></a></td>
                                     </tr>
                                 </c:forEach>

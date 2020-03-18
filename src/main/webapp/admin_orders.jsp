@@ -31,7 +31,7 @@
         <div class="container flex-fill">
             <div class="form-row">
                 <div class="col-lg-12">
-                    <h1>Mine Ordre</h1>
+                    <h1>Alle Ordre</h1>
                     <div class="container px-5">
                         <div class="table-responsive">
                             <table class="table table-bordered table-hove" id="table">
@@ -53,9 +53,9 @@
                                     <td>${order.pickupDate}</td>
                                     <td>${order.orderDate}</td>
                                     <td>${order.customer.email}</td>
-                                    <td class="orderviewbutton"><a href="vieworder.jsp?o=${order.orderId}"><i
+                                    <td class="orderviewbutton"><a href="vieworder.jsp?o=${order.orderId}&from=admin_orders"><i
                                             class="fas fa-eye"></i></a>
-                                        <a href="FrontController?target=removeOrder&orderId=${order.orderId}&from=admin_orders"><i
+                                        <a href="FrontController?target=removeOrder&orderId=${order.orderId}"><i
                                                 class="fas fa-trash-alt" style="color: red;"></i></a></td>
                                     </td>
                                 </tr>
