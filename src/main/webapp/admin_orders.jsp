@@ -52,7 +52,10 @@
                                     <td>${order.orderDate}</td>
                                     <td>${order.customer.email}</td>
                                     <td class="orderviewbutton"><a href="vieworder.jsp?o=${order.orderId}"><i
-                                            class="fas fa-eye"></i></a></td>
+                                            class="fas fa-eye"></i></a>
+                                        <a href="FrontController?target=removeOrder&orderId=${order.orderId}&from=admin_orders"><i
+                                                class="fas fa-trash-alt" style="color: red;"></i></a></td>
+                                    </td>
                                 </tr>
                             </c:forEach>
                             </tbody>

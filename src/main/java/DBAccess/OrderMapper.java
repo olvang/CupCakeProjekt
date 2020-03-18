@@ -12,7 +12,7 @@ public class OrderMapper {
         int id = -1;
         try {
             Connection con = Connector.connection();
-            String SQL = "INSERT INTO orders (u_id, pick_up_date) VALUES (?, ?)";
+            String SQL = "INSERT INTO orders (u_id, pick_up_date, price) VALUES (?, ?, ?)";
             PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS);
 
             String pattern = "yyyy-MM-dd";
@@ -21,6 +21,7 @@ public class OrderMapper {
 
             ps.setInt( 1, order.getUserId());
             ps.setString( 2, mysqlDateString);
+            ps.setDouble( 2, order.getPrice());
 
             ps.executeUpdate();
 
@@ -214,5 +215,20 @@ public class OrderMapper {
             e.printStackTrace();
         }
         return orders;
+    }
+
+    public static void removeOrder(int orderId) {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "DELETE FROM orders where o_id = ?";
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, orderId);
+            ps.executeUpdate();
+
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
