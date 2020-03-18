@@ -5,6 +5,7 @@ public class CupCake {
     private Bottom bottom;
     private Topping top;
     private double price;
+    private int orderline_id = -1;
 
     public CupCake(int amount, Bottom bottom, Topping topping) {
         this.amount = amount;
@@ -51,6 +52,14 @@ public class CupCake {
     public double getPrice() {
         calculatePrice();
         return price;
+    }
+
+    public void setOrderlineId(int id) {
+        orderline_id = id;
+    }
+
+    public int getOrderline_id() {
+        return orderline_id;
     }
 
     private void calculatePrice() {

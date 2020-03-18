@@ -61,4 +61,8 @@ public class LogicFacade {
     public static void removeOrder(int orderId) {
         OrderMapper.removeOrder(orderId);
     }
+
+    public static void removeOrderline(int orderlineID) {
+        OrderMapper.removeOrderline(orderlineID);
+    }
 }

@@ -14,20 +14,38 @@
 
 <%
     User userLoggedIn = (User) session.getAttribute("user");
-    Order order = LogicFacade.getOrder(Integer.parseInt(request.getParameter("o")));
-    //Hvis o ikke er sat er der ikke valgt en ordre
-    //Så smider den en hen til index, med en fejl
-    if (order == null) {
-        request.setAttribute("adminalert", "Den valgte ordre findes ikke");
-        response.sendRedirect("index.jsp");
-    //Hvis user er null er man ikke logget ind
-    //Så smider den en hen til login, med en fejl
+    String orderParam = request.getParameter("o");
 
-    } else if (userLoggedIn == null || !order.getCustomer().getEmail().equals(userLoggedIn.getEmail()) && !userLoggedIn.isAdmin()) {
-        request.setAttribute("adminalert", "Du skal være logget ind for at se den valgte side");
-        response.sendRedirect("login.jsp");
+    //If the delete button has been pressed, this block helps figure out which order was being viewed
+    if(session.getAttribute("redirectToOrder") != null) {
+        String redirectToOrder = (String) session.getAttribute("redirectToOrder");
+        session.setAttribute("redirectToOrder", null);
+        System.out.println("redirecttoorder " + redirectToOrder);
+        response.sendRedirect("vieworder.jsp?o=" + redirectToOrder);
     } else {
-        new ViewOrder().execute(request, response);
+
+    //This next block is authentication on whether the user is allowed to see the given order
+        if (orderParam == null) {
+            request.setAttribute("adminalert", "Den valgte ordre findes ikke");
+            response.sendRedirect("index.jsp");
+        } else {
+            Order order = LogicFacade.getOrder(Integer.parseInt(orderParam));
+            request.setAttribute("currentorder", order.getOrderId());
+            //Hvis o ikke er sat er der ikke valgt en ordre
+            //Så smider den en hen til index, med en fejl
+            if (order == null) {
+                request.setAttribute("adminalert", "Den valgte ordre findes ikke");
+                response.sendRedirect("index.jsp");
+                //Hvis user er null er man ikke logget ind
+                //Så smider den en hen til login, med en fejl
+
+            } else if (userLoggedIn == null || !order.getCustomer().getEmail().equals(userLoggedIn.getEmail()) && !userLoggedIn.isAdmin()) {
+                request.setAttribute("adminalert", "Du skal være logget ind for at se den valgte side");
+                response.sendRedirect("login.jsp");
+            } else {
+                new ViewOrder().execute(request, response);
+            }
+        }
     }
 
 %>
@@ -103,6 +121,12 @@
                                     <div class="p-4">
                                         <h6>x${cupcake.amount}</h6>
                                     </div>
+                                        <c:if test="${sessionScope.role}">
+                                            <div class="p-3 mb-2">
+                                                <a href="FrontController?target=deleteFromOrder&orderlineid=${cupcake.orderline_id}&currentorder=${requestScope.order.orderId}">
+                                                    <i class="fas fa-trash-alt" style="color: red;"></i></a>
+                                            </div>
+                                        </c:if>
                                 </div>
                             </div>
                         </div>

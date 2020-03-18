@@ -86,7 +86,7 @@ public class OrderMapper {
                 order.setOrderDate(createdate);
 
                 //Get all orderlines from db
-                String SQL1 = "SELECT order_line.cp_id,order_line.cb_id,amount,cp_name,cb_name,cp_price,cb_price FROM olskercupcake.order_line right join cupcake_top on order_line.cp_id = cupcake_top.cp_id right join cupcake_bottom on order_line.cb_id = cupcake_bottom.cb_id where order_line.o_id = ?;";
+                String SQL1 = "SELECT ol_id,order_line.cp_id,order_line.cb_id,amount,cp_name,cb_name,cp_price,cb_price FROM olskercupcake.order_line right join cupcake_top on order_line.cp_id = cupcake_top.cp_id right join cupcake_bottom on order_line.cb_id = cupcake_bottom.cb_id where order_line.o_id = ?;";
                 PreparedStatement ps1 = con.prepareStatement(SQL1);
                 ps1.setInt(1, orderID);
                 ResultSet rs1 = ps1.executeQuery();
@@ -105,10 +105,11 @@ public class OrderMapper {
                     double cb_price = rs1.getDouble("cb_price");
                     Bottom bottom = new Bottom(cb_id, cb_name, cb_price);
 
-
+                    int id = rs1.getInt("ol_id");
                     int amount = rs1.getInt("amount");
 
                     CupCake cupCake = new CupCake(amount, bottom, topping);
+                    cupCake.setOrderlineId(id);
                     cupCakes.add(cupCake);
                 }
                 order.setOrderlines(cupCakes);
@@ -233,6 +234,21 @@ public class OrderMapper {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void removeOrderline(int orderlineID) {
+        try {
+            Connection con = Connector.connection();
+            String SQL = "DELETE FROM order_line WHERE ol_id = ?";
+            PreparedStatement ps = con.prepareStatement( SQL );
+            ps.setInt(1, orderlineID);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
