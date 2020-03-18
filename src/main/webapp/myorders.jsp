@@ -33,29 +33,31 @@
                 <div class="col-lg-12">
                     <h1>Mine Ordre</h1>
                     <div class="container px-5">
-                        <table class="table table-bordered table-hover" id="table">
-                            <thead class="tablehead">
-                            <tr>
-                                <th scope="col">Pris</th>
-                                <th scope="col">Antal</th>
-                                <th scope="col">Afhentingsdato</th>
-                                <th scope="col">Ordredato</th>
-                                <th scope="col">Se</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach var="order" items="${requestScope.orders}">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover" id="table">
+                                <thead class="tablehead">
                                 <tr>
-                                    <td>${order.price}</td>
-                                    <td>${order.amount}</td>
-                                    <td>${order.pickupDate}</td>
-                                    <td>${order.orderDate}</td>
-                                    <td class="orderviewbutton"><a href="vieworder.jsp?o=${order.orderId}"><i
-                                            class="fas fa-eye"></i></a></td>
+                                    <th scope="col">Pris</th>
+                                    <th scope="col">Antal</th>
+                                    <th scope="col">Afhentingsdato</th>
+                                    <th scope="col">Ordredato</th>
+                                    <th scope="col">Se</th>
                                 </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="order" items="${requestScope.orders}">
+                                    <tr>
+                                        <td>${order.price}</td>
+                                        <td>${order.amount}</td>
+                                        <td>${order.pickupDate}</td>
+                                        <td>${order.orderDate}</td>
+                                        <td class="orderviewbutton"><a href="vieworder.jsp?o=${order.orderId}"><i
+                                                class="fas fa-eye"></i></a></td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
