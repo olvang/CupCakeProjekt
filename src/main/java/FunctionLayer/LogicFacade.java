@@ -2,6 +2,7 @@ package FunctionLayer;
 
 import DBAccess.CupCakeMapper;
 import DBAccess.OrderMapper;
+import DBAccess.StatisticsMapper;
 import DBAccess.UserMapper;
 
 import java.util.ArrayList;
@@ -12,13 +13,13 @@ import java.util.ArrayList;
  */
 public class LogicFacade {
 
-    public static User login( String email, String password ) throws LoginSampleException {
-        return UserMapper.login( email, password );
-    } 
+    public static User login(String email, String password) throws LoginSampleException {
+        return UserMapper.login(email, password);
+    }
 
-    public static User createUser( String email, String password ) throws LoginSampleException {
-        User user = new User(email, password, false,0);
-        UserMapper.createUser( user );
+    public static User createUser(String email, String password) throws LoginSampleException {
+        User user = new User(email, password, false, 0);
+        UserMapper.createUser(user);
         return user;
     }
 
@@ -58,11 +59,32 @@ public class LogicFacade {
         return OrderMapper.getAllOrdersFromUser(userID);
     }
 
-    public static void removeOrder(int orderId) {
-        OrderMapper.removeOrder(orderId);
+    public static int getAmountOfOrders() {
+        return StatisticsMapper.getAmountOfOrders();
+    }
+
+    public static int getAmountOfCupcakes() {
+        return StatisticsMapper.getAmountOfCupcakes();
+    }
+
+    public static int getAmountOfUsers() {
+        return StatisticsMapper.getAmountOfUsers();
+    }
+
+    public static int getTotalSale() {
+        return StatisticsMapper.getTotalSale();
+    }
+
+    public static ArrayList<Staistics> getLast5() {
+        return StatisticsMapper.getLast5();
+    }
+
+    public static void removeOrder ( int orderId){
+            OrderMapper.removeOrder(orderId);
     }
 
     public static void removeOrderline(int orderlineID) {
         OrderMapper.removeOrderline(orderlineID);
     }
 }
+

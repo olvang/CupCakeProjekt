@@ -34,80 +34,82 @@
                 <div class="col-lg-12">
                     <h1>Kunder</h1>
                     <div class="container px-5">
-                        <table class="table table-bordered table-hover" id="table">
-                            <thead class="tablehead">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Kodeord</th>
-                                <th scope="col">Saldo</th>
-                                <th scope="col">...</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <!-- IF EDIT BUTTON HAS NOT BEEN PRESSED -->
-                            <c:choose>
-                            <c:when test="${requestScope.IDToEdit == null}">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover" id="table">
+                                <thead class="tablehead">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Kodeord</th>
+                                    <th scope="col">Saldo</th>
+                                    <th scope="col">...</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- IF EDIT BUTTON HAS NOT BEEN PRESSED -->
+                                <c:choose>
+                                    <c:when test="${requestScope.IDToEdit == null}">
 
-                                <c:forEach var="user" items="${sessionScope.users}">
-                                    <tr>
-                                        <td>${user.id}</td>
-                                        <td>${user.email}</td>
-                                        <td>********</td>
-                                        <td>${user.balance}</td>
-                                        <td>
-                                            <form action="FrontController" method="POST">
-                                                <button type="submit" class="btn btn-success"><i class="fas fa-edit"></i></button>
-                                                <input type="hidden" name="target" value="beginEditUser">
-                                                <input type="hidden" name="userID" value="${user.id}">
-
-                                            </form>
-
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-                            </c:when>
-                            <c:otherwise>
-                                <c:forEach var="user" items="${sessionScope.users}" varStatus="count">
-                                    <tr>
-                                        <c:choose>
-                                            <c:when test="${user.id == requestScope.IDToEdit}">
-                                                <form action="FrontController" method="POST">
-                                                    <td>${user.id}</td>
-                                                    <td><input type="email" value="${user.email}" name="editedEmail"></td>
-                                                    <td><input type="password" placeholder="********" name="editedPassword"></td>
-                                                    <td><input type="number" value="${user.balance}" step="0.01" min="0" name="editedBalance"></td>
-                                                    <td>
-
-                                                            <button type="submit" class="btn btn-success"><i class="fas fa-save"></i></button>
-                                                            <input type="hidden" name="target" value="updateUser">
-                                                            <input type="hidden" name="userID" value="${user.id}">
-                                                            <input type="hidden" name="counter" value="${count.index}">
-                                                    </td>
-                                                </form>
-                                            </c:when>
-                                            <c:otherwise>
+                                        <c:forEach var="user" items="${sessionScope.users}">
+                                            <tr>
                                                 <td>${user.id}</td>
                                                 <td>${user.email}</td>
                                                 <td>********</td>
                                                 <td>${user.balance}</td>
                                                 <td>
                                                     <form action="FrontController" method="POST">
-                                                        <button type="submit" class="btn btn-success" disabled><i class="fas fa-edit"></i></button>
+                                                        <button type="submit" class="btn btn-success"><i class="fas fa-edit"></i></button>
                                                         <input type="hidden" name="target" value="beginEditUser">
                                                         <input type="hidden" name="userID" value="${user.id}">
+
                                                     </form>
+
                                                 </td>
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </tr>
-                                </c:forEach>
-                            </c:otherwise>
-                            </c:choose>
-                            </tbody>
+                                            </tr>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <c:forEach var="user" items="${sessionScope.users}" varStatus="count">
+                                            <tr>
+                                                <c:choose>
+                                                    <c:when test="${user.id == requestScope.IDToEdit}">
+                                                        <form action="FrontController" method="POST">
+                                                            <td>${user.id}</td>
+                                                            <td><input type="email" value="${user.email}" name="editedEmail"></td>
+                                                            <td><input type="password" placeholder="********" name="editedPassword"></td>
+                                                            <td><input type="number" value="${user.balance}" step="0.01" min="0" name="editedBalance"></td>
+                                                            <td>
+
+                                                                <button type="submit" class="btn btn-success"><i class="fas fa-save"></i></button>
+                                                                <input type="hidden" name="target" value="updateUser">
+                                                                <input type="hidden" name="userID" value="${user.id}">
+                                                                <input type="hidden" name="counter" value="${count.index}">
+                                                            </td>
+                                                        </form>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <td>${user.id}</td>
+                                                        <td>${user.email}</td>
+                                                        <td>********</td>
+                                                        <td>${user.balance}</td>
+                                                        <td>
+                                                            <form action="FrontController" method="POST">
+                                                                <button type="submit" class="btn btn-success" disabled><i class="fas fa-edit"></i></button>
+                                                                <input type="hidden" name="target" value="beginEditUser">
+                                                                <input type="hidden" name="userID" value="${user.id}">
+                                                            </form>
+                                                        </td>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </tr>
+                                        </c:forEach>
+                                    </c:otherwise>
+                                </c:choose>
+                                </tbody>
 
 
-                        </table>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

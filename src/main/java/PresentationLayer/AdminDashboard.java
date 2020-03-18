@@ -1,9 +1,6 @@
 package PresentationLayer;
 
-import FunctionLayer.Bottom;
-import FunctionLayer.LoginSampleException;
-import FunctionLayer.TopAndBottoms;
-import FunctionLayer.Topping;
+import FunctionLayer.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +16,13 @@ public class AdminDashboard extends Command {
             request.setAttribute("adminalert", "Du har ikke tilladelse til at se denne side.");
             return "index";
         }
+
+        request.setAttribute("amountOfCupcakes", LogicFacade.getAmountOfCupcakes());
+        request.setAttribute("amountOfOrders", LogicFacade.getAmountOfOrders());
+        request.setAttribute("amountOfUsers", LogicFacade.getAmountOfUsers());
+        request.setAttribute("totalSale", LogicFacade.getTotalSale());
+        request.setAttribute("last5", LogicFacade.getLast5());
+
         return "admin_dash";
         //TODO remember to change this when refactoring admin pages into WEB-INF
 
