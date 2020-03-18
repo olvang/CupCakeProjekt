@@ -14,9 +14,13 @@ public class AdminDashboard extends Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
-
-        //TODO remember to change this when refactoring admin pages into WEB-INF
+        HttpSession session = request.getSession();
+        if(session.getAttribute("role") == null || (boolean) session.getAttribute("role") == false) {
+            request.setAttribute("adminalert", "Du har ikke tilladelse til at se denne side.");
+            return "index";
+        }
         return "admin_dash";
+        //TODO remember to change this when refactoring admin pages into WEB-INF
+
     }
 }
-

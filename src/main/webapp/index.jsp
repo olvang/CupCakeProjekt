@@ -32,6 +32,14 @@
                     </button>
                 </div>
             </c:when>
+            <c:when test="${requestScope.adminalert != null}">
+                <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+                        ${requestScope.adminalert}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </c:when>
         </c:choose>
         <h2 class="subtitle">Øens bedste cupcakes. Vælg og bestil her:</h2>
 

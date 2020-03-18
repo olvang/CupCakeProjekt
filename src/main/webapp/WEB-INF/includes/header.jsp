@@ -25,7 +25,7 @@
                         <div class="dropdown-divider"></div>
                         <c:choose>
                             <c:when test="${sessionScope.role}">
-                                <a class="dropdown-item" href="admin_dash.jsp">Adminstrator</a>
+                                <a class="dropdown-item" href="FrontController?target=AdminDashboard">Adminstrator</a>
                                 <div class="dropdown-divider"></div>
                             </c:when>
                         </c:choose>
