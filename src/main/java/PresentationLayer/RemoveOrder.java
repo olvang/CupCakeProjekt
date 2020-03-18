@@ -15,6 +15,8 @@ public class RemoveOrder extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
+        //Todo check if getAttribute values are valid
+
 
         //Is user admin
         User user = (User) session.getAttribute("user");
@@ -24,7 +26,6 @@ public class RemoveOrder extends Command {
 
         int orderId = Integer.parseInt(request.getParameter("orderId"));
         String fromPage = request.getParameter("from");
-        //Todo check if input is valid
 
 
         //Delete order in db
