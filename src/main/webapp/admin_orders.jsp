@@ -53,6 +53,7 @@
                                     <td>${order.pickupDate}</td>
                                     <td>${order.orderDate}</td>
                                     <td>${order.customer.email}</td>
+                                    <!-- TODO remember to change this from parameter, when admin pages have been refactored -->
                                     <td class="orderviewbutton"><a href="vieworder.jsp?o=${order.orderId}&from=admin_orders"><i
                                             class="fas fa-eye"></i></a>
                                         <a href="FrontController?target=removeOrder&orderId=${order.orderId}"><i

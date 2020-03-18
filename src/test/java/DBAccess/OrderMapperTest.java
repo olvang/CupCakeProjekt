@@ -59,8 +59,8 @@ public class OrderMapperTest {
     @Test
     public void testGetAllOrdersFromUser() throws LoginSampleException {
         ArrayList<Order> orders;
-        int expectedSize = 2;
-        int expectedAmount = 6;
+        int expectedSize = 3;
+        int expectedAmount = 4;
         int expectedId = 4;
 
         orders = OrderMapper.getAllOrdersFromUser(4);
@@ -79,7 +79,7 @@ public class OrderMapperTest {
     public void testGetAllOrders() throws LoginSampleException {
         ArrayList<Order> orders;
         int orderToCheck = 2; //orderid 3
-        int expectedSize = 5;
+        int expectedSize = 11;
         int expectedAmount = 4;
         int expectedOrderId = 3;
 
