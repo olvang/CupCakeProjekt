@@ -66,20 +66,20 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a href="index.jsp" class="navbar-brand">Forside</a>
+
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li>
+                    <a href="index.jsp" class="nav-item">Forside</a>
+                </li>
                 <c:choose>
                     <c:when test="${sessionScope.email == null}">
                         <li class="nav-item">
-                                ${"<a href='login.jsp' class= 'navbar-text mr-sm-2'>Login / Registrer</a>"}
+                                ${"<a href='login.jsp' class= 'nav-item'>Login / Registrer</a>"}
                         </li>
                     </c:when>
                     <c:otherwise>
-                        <li class="nav-item">
-                            <p>${sessionScope.email}</p>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-item" href="myorders.jsp">Mine ordre</a>
                         </li>
@@ -97,9 +97,11 @@
                                 </c:when>
                             </c:choose>
                         <li class="nav-item">
-                            <a class="dropdown-item" href="FrontController?target=logout">Logout</a>
+                            <a class="nav-item" href="FrontController?target=logout">Logout</a>
                         </li>
-
+                        <li class="nav-item">
+                            <p>${sessionScope.email}</p>
+                        </li>
                     <li class="nav-item">
                         <p class="navbar-text my-0">${sessionScope.balance} kr.</p>
                     </li>
