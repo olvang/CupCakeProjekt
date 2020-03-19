@@ -5,7 +5,7 @@ body {
 }
 
 /* Anything that only happens on desktop version goes here */
-@media screen and (min-width: 48em){
+@media screen and (min-width: 850px){
     body{
         text-align: left;
     }
@@ -29,7 +29,27 @@ body {
     .headerimg {
         content: url("images/Header5.png")!important;
     }
+
+    .phonenav {
+        display: none!important;
+    }
+    .desktopnav {
+        display: flex!important;
+    }
 }
+
+@media screen and (max-width: 850px) {
+    .desktopnav {
+        display: none!important;
+    }
+    .phonenav {
+        display: flex!important;
+    }
+}
+.phonenav {
+    display: none;
+}
+
 .headerimg {
     content: url("images/Header4.png");
 }
