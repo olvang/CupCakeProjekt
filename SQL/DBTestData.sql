@@ -40,7 +40,6 @@ INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (1,
 INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (2,'2008-01-01 10:00:01',55.0, '2019-04-18 14:30:56');
 INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (3,'2008-01-01 20:00:01',60.0, '2019-04-18 14:30:56');
 INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (4,'2008-01-01 00:35:01',80.0, '2019-04-18 14:30:56');
-INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (4,'2008-01-01 00:35:01',80.0, '2019-05-18 14:30:56');
 
 INSERT INTO olskercupcake.orders (u_id,pick_up_date, price,created_at) VALUES (1,'2008-01-01 00:00:01','3.14', '2020-03-18 12:30:56');
 INSERT INTO olskercupcake.orders (u_id,pick_up_date, price,created_at) VALUES (2,'2008-01-01 10:00:01','3.14', '2020-03-18 12:30:56');

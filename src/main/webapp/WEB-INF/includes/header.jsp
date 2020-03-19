@@ -89,7 +89,7 @@
                                     <a class="nav-item" href="FrontController?target=AdminDashboard">Dashboard</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-item" href="FrontController?target=getAllOrders">Ordre</a>
+                                    <a class="nav-item" href="FrontController?target=getAllOrders">Ordrer</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-item" href="FrontController?target=getAllCustomers">Kunder</a>

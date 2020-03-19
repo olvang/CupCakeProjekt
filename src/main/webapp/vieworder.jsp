@@ -88,7 +88,7 @@
                             </div>
                             <div class="col-9 h-100">
                                 <div class="d-flex flex-row justify-content-end align-items-center " style="height: 100px;">
-                                    <div class="p-5">
+                                    <div class="p-5 pr-lg-2">
                                         <h5>${cupcake.price} kr.</h5>
                                     </div>
                                     <div class="p-4">
@@ -96,7 +96,7 @@
                                     </div>
                                         <c:if test="${sessionScope.role}">
                                             <div class="p-3 mb-2">
-                                                <a href="FrontController?target=deleteFromOrder&orderlineid=${cupcake.orderline_id}&currentorder=${requestScope.order.orderId}">
+                                                <a href="FrontController?target=deleteFromOrder&orderlineid=${cupcake.orderline_id}&currentorder=${requestScope.order.orderId}&ordercount=${count.index}&from=${requestScope.targetpage}">
                                                     <i class="fas fa-trash-alt" style="color: red;"></i></a>
                                             </div>
                                         </c:if>

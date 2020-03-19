@@ -15,9 +15,15 @@ public class DeleteFromOrder extends Command{
         HttpSession session = request.getSession();
         int orderlineid = Integer.parseInt(request.getParameter("orderlineid"));
         String currentOrder = request.getParameter("currentorder");
+        int orderCount = Integer.parseInt(request.getParameter("ordercount") );
 
         LogicFacade.removeOrderline(orderlineid);
-        System.out.println("currentOrder" + currentOrder);
+
+        if(orderCount == 0) {
+            LogicFacade.removeOrder(Integer.parseInt(currentOrder ));
+            return "WEB-INF/admin_orders";
+        }
+
         session.setAttribute("redirectToOrder", currentOrder);
         return "vieworder";
     }
@@ -28,7 +34,6 @@ public class DeleteFromOrder extends Command{
         if (session.getAttribute("redirectToOrder") != null) {
             String redirectToOrder = (String) session.getAttribute("redirectToOrder");
             session.setAttribute("redirectToOrder", null);
-            System.out.println("redirecttoorder " + redirectToOrder);
             response.sendRedirect("vieworder.jsp?o=" + redirectToOrder);
             return true;
         }
