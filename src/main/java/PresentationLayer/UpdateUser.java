@@ -35,6 +35,11 @@ public class UpdateUser extends Command{
         users.get(count).setBalance(balance);
         users.get(count).setEmail(email);
 
+        String loggedInUser = ((User) session.getAttribute("user")).getEmail();
+        if(user.getEmail().equals(loggedInUser)) {
+            session.setAttribute("balance", balance);
+        }
+
         //TODO remember to change this when refactoring admin pages into WEB-INF
         return "WEB-INF/admin_customers";
     }

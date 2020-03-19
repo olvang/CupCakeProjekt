@@ -92,7 +92,7 @@ public class UserMapper {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT u_id, email, balance " +
-                    "FROM users WHERE admin = 0";
+                    "FROM users";
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
 
@@ -102,12 +102,14 @@ public class UserMapper {
                     int id = rs.getInt("u_id");
                     String email = rs.getString("email");
                     double balance = rs.getDouble("balance");
+                    //boolean admin = rs.getBoolean("admin");
                     User user = new User(email, false, balance);
                     user.setId(id);
                     customers.add(user);
                     //check while after, to avoid missing first row due to if statement
                 } while (rs.next());
             } else {
+                System.out.println("error!");
                 throw new LoginSampleException("There are no customers");
             }
 

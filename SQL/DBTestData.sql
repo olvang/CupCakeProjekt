@@ -31,8 +31,8 @@ INSERT INTO `olskercupcake`.`cupcake_top` (`cp_price`,`cp_name`) VALUES (9.00,'B
 
 INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (1,'2008-01-01 00:00:01',40.0, '2020-03-18 12:30:56');
 INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (1,'2008-01-01 00:00:01',40.0, '2020-03-18 12:30:56');
-INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (2,'2008-01-01 10:00:01',55.0, '2020-05-18 11:30:56');
-INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (3,'2008-01-01 20:00:01',60.0, '2020-05-18 10:30:56');
+INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (2,'2008-01-01 10:00:01',46.0, '2020-05-18 11:30:56');
+INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (3,'2008-01-01 20:00:01',64.0, '2020-05-18 10:30:56');
 INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (4,'2008-01-01 00:35:01',80.0, '2020-04-18 09:30:56');
 INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (4,'2008-01-01 00:35:01',80.0, '2020-04-18 08:30:56');
 INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (1,'2008-01-01 00:00:01',40.0, '2019-03-18 14:30:56');
@@ -40,6 +40,7 @@ INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (1,
 INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (2,'2008-01-01 10:00:01',55.0, '2019-04-18 14:30:56');
 INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (3,'2008-01-01 20:00:01',60.0, '2019-04-18 14:30:56');
 INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (4,'2008-01-01 00:35:01',80.0, '2019-04-18 14:30:56');
+INSERT INTO olskercupcake.orders (u_id,pick_up_date,price,created_at) VALUES (4,'2008-01-01 00:35:01',80.0, '2019-05-18 14:30:56');
 
 INSERT INTO olskercupcake.orders (u_id,pick_up_date, price,created_at) VALUES (1,'2008-01-01 00:00:01','3.14', '2020-03-18 12:30:56');
 INSERT INTO olskercupcake.orders (u_id,pick_up_date, price,created_at) VALUES (2,'2008-01-01 10:00:01','3.14', '2020-03-18 12:30:56');
@@ -68,3 +69,11 @@ INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (3,7,1,3);
 INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (3,8,1,3);
 INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (3,9,1,3);
 INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (3,10,1,3);
+
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (9,11,2,4);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (9,12,2,4);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (9,13,2,4);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (9,14,2,4);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (9,15,2,4);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (9,16,2,4);
+INSERT INTO olskercupcake.order_line (amount,o_id,cb_id,cp_id) VALUES (9,17,2,4);
