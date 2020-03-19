@@ -122,7 +122,8 @@
         labels: ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"],
         datasets: [{
             data: [<c:forEach var="month" items="${requestScope.OrdersByMonth}">
-                    <c:out value="${month.value}"/>,
+
+                    <c:out value="${month.value},"/>
                 </c:forEach>],
             backgroundColor: 'transparent',
             borderColor: "#007bff",
