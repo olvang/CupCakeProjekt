@@ -31,6 +31,6 @@ public class MyOrders extends Command {
             return "index";
         }
 
-        return "myorders";
+        return "WEB-INF/myorders";
     }
 }

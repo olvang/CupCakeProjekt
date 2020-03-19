@@ -26,7 +26,7 @@
 </head>
 
 <body class="d-flex flex-column">
-<jsp:include page="WEB-INF/includes/header.jsp" />
+<jsp:include page="includes/header.jsp" />
 <div class="outer">
     <div class="container pagecontainer main border rounded mb-2">
         <div class="container flex-fill">
@@ -127,7 +127,7 @@
     </div>
 </div>
 
-<jsp:include page="WEB-INF/includes/footer.jsp"></jsp:include>
+<jsp:include page="includes/footer.jsp"></jsp:include>
 
 
 

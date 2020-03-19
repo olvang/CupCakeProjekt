@@ -16,6 +16,6 @@ public class BeginEditUser extends Command {
         request.setAttribute("userEmail", userEmail);
 
         //TODO remember to change this when refactoring admin pages into WEB-INF
-        return "admin_customers";
+        return "WEB-INF/admin_customers";
     }
 }

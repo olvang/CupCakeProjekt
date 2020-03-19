@@ -26,7 +26,7 @@ public class AdminDashboard extends Command {
         request.setAttribute("totalSale", LogicFacade.getTotalSale());
         request.setAttribute("last5", LogicFacade.getLast5());
 
-        return "admin_dash";
+        return "WEB-INF/admin_dash";
         //TODO remember to change this when refactoring admin pages into WEB-INF
 
     }

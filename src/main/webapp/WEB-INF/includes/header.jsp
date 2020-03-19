@@ -5,7 +5,7 @@
 
 <div class="container" style="padding-left: 0px;padding-right: 0px;">
 
-    <img src="images/Header5.png" class="img-fluid" alt="Responsive image">
+    <img src="images/Header5.png" class="img-fluid headerimg" alt="Responsive image">
 
     <nav class="navbar navbar-light mt-2 pagecontainer">
         <a href="index.jsp" class="navbar-text">Forside</a>

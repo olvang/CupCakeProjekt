@@ -14,7 +14,6 @@ public class ViewOrder extends Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
 
-        //TODO check if the user actually owns the order and then proceed
         Order order = null;
         try {
             order = LogicFacade.getOrder(Integer.parseInt(request.getParameter("o")));

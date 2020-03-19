@@ -30,6 +30,6 @@ public class GetAllOrders extends Command{
         }
 
         //TODO remember to change this when refactoring admin pages into WEB-INF
-        return "admin_orders";
+        return "WEB-INF/admin_orders";
     }
 }

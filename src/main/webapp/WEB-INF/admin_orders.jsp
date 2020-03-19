@@ -25,7 +25,7 @@
 </head>
 
 <body class="d-flex flex-column">
-<jsp:include page="WEB-INF/includes/header.jsp" />
+<jsp:include page="includes/header.jsp" />
 <div class="outer">
     <div class="container pagecontainer main border rounded mb-2">
         <div class="container flex-fill">
@@ -54,9 +54,9 @@
                                     <td>${order.orderDate}</td>
                                     <td>${order.customer.email}</td>
                                     <!-- TODO remember to change this from parameter, when admin pages have been refactored -->
-                                    <td class="orderviewbutton"><a href="vieworder.jsp?o=${order.orderId}&from=admin_orders"><i
+                                    <td class="orderviewbutton"><a href="vieworder.jsp?o=${order.orderId}&from=FrontController?target=getAllOrders"><i
                                             class="fas fa-eye"></i></a>
-                                        <a href="FrontController?target=removeOrder&orderId=${order.orderId}"><i
+                                        <a href="FrontController?target=removeOrder&orderId=${order.orderId}&from=WEB-INF/admin_orders"><i
                                                 class="fas fa-trash-alt" style="color: red;"></i></a></td>
                                     </td>
                                 </tr>
@@ -71,7 +71,7 @@
     </div>
 </div>
 
-<jsp:include page="WEB-INF/includes/footer.jsp"></jsp:include>
+<jsp:include page="includes/footer.jsp"></jsp:include>
 
 
 

@@ -47,7 +47,7 @@
                     <a href="myorders.jsp">
                         <div class="col-1">
                             <!-- TODO this might need to be changed too, when admin pages have been refactored into WEB-INF-->
-                            <a href="${requestScope.targetpage}.jsp">
+                            <a href="${requestScope.targetpage}">
                                 <button type="button" class="btn btn-lg button">Tilbage</button>
                             </a>
                         </div>

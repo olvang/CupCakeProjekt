@@ -25,6 +25,13 @@ body {
     .checkoutbutton {
         margin-top: 50pt;
     }
+
+    .headerimg {
+        content: url("images/Header5.png")!important;
+    }
+}
+.headerimg {
+    content: url("images/Header4.png");
 }
 
 .navbar-nav > a {padding-top:5px !important; padding-bottom:5px !important;}

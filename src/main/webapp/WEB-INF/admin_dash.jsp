@@ -20,7 +20,7 @@
 %>
 
 
-<jsp:include page="WEB-INF/includes/header.jsp"/>
+<jsp:include page="includes/header.jsp"/>
 <div class="outer">
     <div class="container pagecontainer main border rounded ">
         <div class="row mt-4">
@@ -78,7 +78,7 @@
                         <c:forEach var="stats" items="${requestScope.last5}">
                             <tr>
                                 <!-- TODO remember to change this from parameter, when admin pages have been refactored -->
-                                <th scope="row"><a href="vieworder.jsp?o=${stats.o_id}&from=admin_dash"><i
+                                <th scope="row"><a href="vieworder.jsp?o=${stats.o_id}&from=FrontController?target=AdminDashboard"><i
                                         class="fas fa-eye"></i></a></th>
                                 <td>${stats.email}</td>
                                 <td>${stats.price}</td>
@@ -101,7 +101,7 @@
         </div>
 
     </div>
-    <jsp:include page="WEB-INF/includes/footer.jsp"></jsp:include>
+    <jsp:include page="includes/footer.jsp"></jsp:include>
 </div>
 
 
