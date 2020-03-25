@@ -17,10 +17,16 @@ import javax.servlet.http.HttpSession;
 public class Login extends Command {
 
     @Override
-    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
+    String execute( HttpServletRequest request, HttpServletResponse response ) {
         String email = request.getParameter( "LoginEmail" );
         String password = request.getParameter( "LoginPassword" );
-        User user = LogicFacade.login( email, password );
+        User user = null;
+        try {
+            user = LogicFacade.login( email, password );
+        } catch (LoginSampleException e) {
+            request.setAttribute("loginmsg", "Brugernavn eller password er forkert.");
+            return "login";
+        }
 
         HttpSession session = request.getSession();
 

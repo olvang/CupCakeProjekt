@@ -22,6 +22,16 @@
 <jsp:include page="WEB-INF/includes/header.jsp"></jsp:include>
 
 <div class="container main border rounded mb-2 pt-1 pagecontainer">
+    <c:choose>
+        <c:when test="${requestScope.loginmsg != null}">
+            <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+                    ${requestScope.loginmsg}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </c:when>
+    </c:choose>
     <div class="form-row">
         <div class="col-lg-6">
             <form name="login" action="FrontController" method="POST">

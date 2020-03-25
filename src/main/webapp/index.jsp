@@ -41,6 +41,7 @@
                 </div>
             </c:when>
         </c:choose>
+
         <h2 class="subtitle">Øens bedste cupcakes. Vælg og bestil her:</h2>
 
         <div class="container">
