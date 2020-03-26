@@ -24,10 +24,6 @@ public class LogicFacade {
         return user;
     }
 
-    private static TopAndBottoms getTopAndBottoms() {
-        return new CupCakeMapper().getTopAndBottoms();
-    }
-
     public static ArrayList<Bottom> getBottoms() {
         return CupCakeMapper.getBottoms();
     }

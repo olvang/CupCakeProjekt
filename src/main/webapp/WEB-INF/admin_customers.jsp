@@ -8,12 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
-<%
-    //TODO Fjern denne, da det er spild at hente hele listen hver gang der klikkes på en redigerknap.
-    //kald den i stedet kun når man klikker ind på siden fra admin_dashboard
-    new GetAllCustomers().execute(request, response);
-%>
-
 <html>
 <head>
     <meta charset="UTF-8">

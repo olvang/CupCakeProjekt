@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 public class ShowBasket extends Command{
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
 
         if (session.getAttribute("order") == null) {

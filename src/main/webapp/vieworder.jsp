@@ -46,7 +46,7 @@
                 <td>
                     <a href="myorders.jsp">
                         <div class="col-1">
-                            <!-- TODO this might need to be changed too, when admin pages have been refactored into WEB-INF-->
+
                             <a href="${requestScope.targetpage}">
                                 <button type="button" class="btn btn-lg button">Tilbage</button>
                             </a>
@@ -61,7 +61,7 @@
 
         <div class="pagecontainer">
             <table class="outerTable table-bordered">
-                <!-- TODO: Den her opfører sig pænere på lave opløsninger end den øverste. Byg ForEachLoop omkring den her-->
+
                 <c:forEach var="cupcake" items="${requestScope.orderlines}" varStatus="count">
                 <tr class="border_bottomOuter">
                     <td>
@@ -96,7 +96,7 @@
                                     </div>
                                         <c:if test="${sessionScope.role}">
                                             <div class="p-3 mb-2">
-                                                <a href="FrontController?target=deleteFromOrder&orderlineid=${cupcake.orderline_id}&currentorder=${requestScope.order.orderId}&ordercount=${count.index}&from=${requestScope.targetpage}">
+                                                <a href="FrontController?target=deleteFromOrder&orderlineid=${cupcake.orderline_id}&currentorder=${requestScope.order.orderId}&ordercount=${requestScope.orderlines.size()}&from=${requestScope.targetpage}">
                                                     <i class="fas fa-trash-alt" style="color: red;"></i></a>
                                             </div>
                                         </c:if>

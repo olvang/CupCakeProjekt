@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 public class UpdateOrder extends Command{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    String execute(HttpServletRequest request, HttpServletResponse response)  {
         HttpSession session = request.getSession();
 
         Order order = (Order) session.getAttribute("order");

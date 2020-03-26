@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 public class Register extends Command {
 
     @Override
-    String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException {
+    String execute( HttpServletRequest request, HttpServletResponse response ) {
         String email = request.getParameter( "RegisterEmail" );
         String password1 = request.getParameter( "RegisterPassword1" );
         String password2 = request.getParameter( "RegisterPassword2" );

@@ -10,9 +10,9 @@ import java.util.ArrayList;
 public class ShowFrontPage extends Command{
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
-        //TODO consider whether this should even be a command
+
         TopAndBottoms.initTopAndBottoms();
         ArrayList<Bottom> bottoms = TopAndBottoms.getBottoms();
         ArrayList<Topping> toppings = TopAndBottoms.getToppings();

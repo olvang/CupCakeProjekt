@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 public class AddToOrder extends Command{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         Order order;
         int amount;
@@ -47,7 +47,7 @@ public class AddToOrder extends Command{
             request.setAttribute("msg", "Cupcake tilføjet til kurv!");
             //order.addToOrder(new CupCake());
         }catch(Exception ex) {
-            request.setAttribute("msg", "Der skete en fejl.");
+            request.setAttribute("msg", "Der skete en fejl. " + ex.getMessage());
         }
         return "index";
     }

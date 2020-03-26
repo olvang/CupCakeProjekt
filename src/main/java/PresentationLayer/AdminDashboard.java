@@ -13,7 +13,7 @@ public class AdminDashboard extends Command {
     private LocalDateTime today = LocalDateTime.now();
     private int THIS_YEAR = today.getYear();
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         if(session.getAttribute("role") == null || (boolean) session.getAttribute("role") == false) {
             request.setAttribute("adminalert", "Du har ikke tilladelse til at se denne side.");
@@ -27,7 +27,6 @@ public class AdminDashboard extends Command {
         request.setAttribute("last5", LogicFacade.getLast5());
 
         return "WEB-INF/admin_dash";
-        //TODO remember to change this when refactoring admin pages into WEB-INF
 
     }
 }

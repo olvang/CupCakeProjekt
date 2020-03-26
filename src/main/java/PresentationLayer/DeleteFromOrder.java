@@ -11,7 +11,7 @@ import java.io.IOException;
 public class DeleteFromOrder extends Command{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         int orderlineid = Integer.parseInt(request.getParameter("orderlineid"));
         String currentOrder = request.getParameter("currentorder");
@@ -19,7 +19,8 @@ public class DeleteFromOrder extends Command{
 
         LogicFacade.removeOrderline(orderlineid);
 
-        if(orderCount == 0) {
+        //if ordercount is 1, the order being deleted is the last one
+        if(orderCount == 1) {
             LogicFacade.removeOrder(Integer.parseInt(currentOrder ));
             return "WEB-INF/admin_orders";
         }

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class UpdateUser extends Command{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    String execute(HttpServletRequest request, HttpServletResponse response)  {
         HttpSession session = request.getSession();
 
         String email = request.getParameter("editedEmail");
@@ -27,7 +27,12 @@ public class UpdateUser extends Command{
         if(!password.equals("")) {
             user.setPassword(password);
         }
-        LogicFacade.updateUser(user);
+        try {
+            LogicFacade.updateUser(user);
+        } catch (LoginSampleException e) {
+            request.setAttribute("msg", "Der skete en fejl. " + e.getMessage());
+            return "index";
+        }
 
         ArrayList<User> users = (ArrayList<User>) session.getAttribute("users");
         users.get(count).setBalance(balance);
@@ -38,7 +43,6 @@ public class UpdateUser extends Command{
             session.setAttribute("balance", balance);
         }
 
-        //TODO remember to change this when refactoring admin pages into WEB-INF
         return "WEB-INF/admin_customers";
     }
 }

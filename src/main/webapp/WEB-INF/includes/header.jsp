@@ -26,7 +26,7 @@
                         <c:choose>
                             <c:when test="${sessionScope.role}">
                                 <a class="dropdown-item" href="FrontController?target=AdminDashboard">Dashboard</a>
-                                <a class="dropdown-item" href="FrontController?target=getAllOrders">Ordre</a>
+                                <a class="dropdown-item" href="FrontController?target=getAllOrders">Ordrer</a>
                                 <a class="dropdown-item" href="FrontController?target=getAllCustomers">Kunder</a>
                                 <div class="dropdown-divider"></div>
                             </c:when>

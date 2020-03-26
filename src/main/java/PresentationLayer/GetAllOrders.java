@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class GetAllOrders extends Command{
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
 
         if(session.getAttribute("role") == null || (boolean) session.getAttribute("role") == false) {
@@ -24,12 +24,10 @@ public class GetAllOrders extends Command{
             ArrayList<Order> orders = LogicFacade.getAllOrders();
             request.setAttribute("orders", orders);
         } catch (Exception ex) {
-            //TODO Exception
-
+            request.setAttribute("msg", "Der skete en fejl. " + ex.getMessage());
             return "index";
         }
 
-        //TODO remember to change this when refactoring admin pages into WEB-INF
         return "WEB-INF/admin_orders";
     }
 }

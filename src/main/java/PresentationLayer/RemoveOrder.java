@@ -13,7 +13,7 @@ import java.util.Collections;
 public class RemoveOrder extends Command {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         //Todo check if getAttribute values are valid
 
@@ -31,7 +31,6 @@ public class RemoveOrder extends Command {
         //Delete order in db
         LogicFacade.removeOrder(orderId);
 
-        //TODO remember to change this when refactoring admin pages into WEB-INF
         return fromPage;
     }
 }

@@ -6,12 +6,6 @@ public class TopAndBottoms {
     private static ArrayList<Bottom> bottoms;
     private static ArrayList<Topping> toppings;
 
-    //TODO refactor constructor out
-    public TopAndBottoms(ArrayList<Bottom> bottoms, ArrayList<Topping> toppings) {
-        this.bottoms = bottoms;
-        this.toppings = toppings;
-    }
-
     public static void initTopAndBottoms() {
         if(bottoms == null) {
             bottoms = LogicFacade.getBottoms();

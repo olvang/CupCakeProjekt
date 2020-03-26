@@ -77,7 +77,7 @@
                         <tbody>
                         <c:forEach var="stats" items="${requestScope.last5}">
                             <tr>
-                                <!-- TODO remember to change this from parameter, when admin pages have been refactored -->
+
                                 <th scope="row"><a href="vieworder.jsp?o=${stats.o_id}&from=FrontController?target=AdminDashboard"><i
                                         class="fas fa-eye"></i></a></th>
                                 <td>${stats.email}</td>

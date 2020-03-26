@@ -54,37 +54,6 @@ public class CupCakeMapperTest extends TestDataSetup {
         assertNotNull( testConnection );
     }
 
-    @Test
-    public void testGetTopAndBottoms() {
-        TopAndBottoms catalog = new CupCakeMapper().getTopAndBottoms();
-        int testIndex = 2;
-        String expectedBottomName;
-        String actualBottomName;
-        String expectedToppingName;
-        String actualToppingName;
-        double expectedBottomPrice;
-        double actualBottomPrice;
-        double expectedToppingPrice;
-        double actualToppingPrice;
-
-        //Act bottoms
-        expectedBottomName = "Nutmeg";
-        actualBottomName = catalog.getBottoms().get(testIndex).getName();
-        expectedBottomPrice = 5.0;
-        actualBottomPrice = catalog.getBottoms().get(testIndex).getPrice();
-
-        //Act toppings
-        expectedToppingName = "Rasberry";
-        actualToppingName = catalog.getToppings().get(testIndex).getName();
-        expectedToppingPrice = 5.0;
-        actualToppingPrice = catalog.getToppings().get(testIndex).getPrice();
-
-        //Assert
-        assertEquals(expectedBottomName, actualBottomName);
-        assertEquals(expectedBottomPrice, actualBottomPrice, 0.01);
-        assertEquals(expectedToppingName, actualToppingName);
-        assertEquals(expectedToppingPrice, actualToppingPrice, 0.01);
-    }
 
     @Test
     public void testGetBottoms() {

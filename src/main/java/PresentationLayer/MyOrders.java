@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class MyOrders extends Command {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         User user;
 
@@ -26,8 +26,7 @@ public class MyOrders extends Command {
             request.setAttribute("orders", orders);
 
         } catch (Exception ex) {
-            //TODO Exception
-
+            request.setAttribute("msg", "Der skete en fejl. " + ex.getMessage());
             return "index";
         }
 
