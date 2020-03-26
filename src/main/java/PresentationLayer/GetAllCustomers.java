@@ -16,7 +16,6 @@ public class GetAllCustomers extends Command{
         ArrayList<User> users = LogicFacade.getAllCustomers();
         HttpSession session = request.getSession();
         if(session.getAttribute("role") == null || (boolean) session.getAttribute("role") == false) {
-            System.out.println("no permission");
             request.setAttribute("adminalert", "Du har ikke tilladelse til at se denne side.");
             return "index";
         }
