@@ -20,8 +20,6 @@ public class UpdateUser extends Command{
         double balance = Double.parseDouble(request.getParameter("editedBalance"));
         int id = Integer.parseInt(request.getParameter("userID"));
         int count = Integer.parseInt(request.getParameter("counter"));
-//        String count = request.getParameter("counter");
-        System.out.println(count);
 
         User user = new User(email, false, balance);
         user.setId(id);
