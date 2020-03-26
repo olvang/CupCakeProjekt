@@ -1,0 +1,23 @@
+@startuml
+actor "User" as user
+boundary "login.jsp" as login
+boundary "index.jsp" as index
+participant "FrontController" as front
+participant "Login" as Login
+participant "LogicFacade" as LF
+participant "UserMapper" as usermapper
+database "Database" as database
+
+user -> login : email & password
+login -> front : target: "login"
+front -> Login : http POST login
+Login -> LF : login(email, password)
+LF -> usermapper : login(email, password)
+usermapper -> database: executeQuery()
+database -> usermapper: resultset
+usermapper -> usermapper: validate resultset
+usermapper -> LF : return user
+LF -> Login : return user
+Login -> index : logged in
+index -> user : Welcome
+@enduml

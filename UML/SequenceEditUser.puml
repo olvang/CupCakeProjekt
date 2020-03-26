@@ -1,0 +1,52 @@
+@startuml
+
+Title Add money to user as admin
+
+actor "User" as user
+boundary "index.jsp" as index
+boundary "admin_customers.jsp" as customers
+participant "FrontController" as front
+participant "GetAllCustomers" as getcustomers
+participant "BeginEditUser" as beginedit
+participant "UpdateUser" as update
+participant "LogicFacade" as LF
+participant "UserMapper" as usermapper
+database "Database" as database
+
+
+
+note right of user
+We assume user is
+logged in as admin
+end note
+
+user -> index : user clicks "Kunder"
+index -> customers
+customers -> getcustomers : calls
+getcustomers -> LF : getAllCustomers()
+LF -> usermapper : getAllCustomers()
+usermapper -> database: executeQuery()
+database -> usermapper: resultset
+usermapper -> usermapper: validate resultset
+usermapper -> LF : return list of users
+LF -> getcustomers : return list of users
+getcustomers -> customers : setAttribute(users)
+
+customers -> user : Userlist is displayed
+user -> customers : user clicks "edit"
+customers -> front : target: "beginedit"
+front -> beginedit : http POST beginedit
+beginedit -> customers : setAttribute(id)
+customers -> user : shows textboxes
+user -> customers : edits and saves balance
+customers -> front : target "updateuser"
+front -> update : http Post updateuser
+update -> LF : updateUser(User)
+LF -> usermapper : updateUser(User)
+usermapper -> database: executeUpdate()
+usermapper -> LF : return
+LF -> update : return
+update -> customers : return
+customers -> user : shows updated user
+
+@enduml

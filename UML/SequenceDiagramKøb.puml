@@ -1,0 +1,18 @@
+@startuml
+
+index -> Order : [for each cupcake] AddToOrder()
+Order -> index : redirect (msg "added to basket")
+
+index -> basket : ShowBasket()
+basket -> Pay : Pay()
+Pay -> Pay : Check date
+Pay -> Pay : Check if logged in
+Pay -> Pay : Check balance
+Pay -> LogicFacade : saveOrder()
+LogicFacade -> OrderMapper : saveOrder()
+OrderMapper -> database : saves order
+OrderMapper -> LogicFacade : return
+LogicFacade -> Pay : return
+Pay -> index : redirect (msg "order placed")
+
+@enduml

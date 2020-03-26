@@ -1,0 +1,17 @@
+@startuml
+
+Title Logging in
+State Login.jsp
+State LoggedIn
+
+note right of LoggedIn
+Email and role
+stored in session
+end note
+
+[*] -> Login.jsp
+Login.jsp --> LoggedIn : email and pw OK
+Login.jsp --> Login.jsp : email or pw not OK
+LoggedIn --> [*]
+
+@enduml

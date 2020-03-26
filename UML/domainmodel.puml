@@ -1,0 +1,52 @@
+@startuml
+class OlskerCupcakes
+class Cupcake {
+    {field} Price
+}
+class Order {
+    {field} Price
+    {field} Pickupdate
+    {field} Orderdate
+}
+class Orderlist
+class Top {
+    {field} Price
+}
+class Bottom {
+    {field} Price
+}
+class Userlist
+class User {
+    {field} role
+    {field} email
+    {field} password
+    {field} balance
+}
+class Menucard {
+
+}
+
+
+OlskerCupcakes "1" -- "1" Orderlist : has
+Orderlist "1" -- "*" Order : contains
+Order "1" -- "*" Cupcake : contains
+Cupcake "*" -- "1" Top : has
+Cupcake "*" -- "1" Bottom : has
+
+OlskerCupcakes "1" -- "1" Userlist : has
+Userlist "1" -- "*" User : contains
+Order "*" -- "1" User : has
+
+OlskerCupcakes "1" -- "1" Menucard : has
+Menucard "1" - "1" Bottom : contains
+Menucard "1" - "1" Top : contains
+
+/' class LoginFunction
+class RegisterFunction
+OlskerCupcakes --> LoginFunction
+LoginFunction --> User
+OlskerCupcakes --> RegisterFunction
+RegisterFunction --> Userlist : creates entry
+Userlist -> LoginFunction : logs in '/
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+
+Title See user order as admin
+State "index.jsp" as index
+State "admin_orders.jsp" as orders
+State "vieworder.jsp" as vieworder
+
+[*] --> index
+index --> orders : if user is admin
+orders --> orders : search for user
+orders --> vieworder : click view button
+
+@enduml
