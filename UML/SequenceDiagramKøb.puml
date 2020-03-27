@@ -1,7 +1,24 @@
 @startuml
 
+Actor User as user
+boundary "index.jsp" as index
+boundary "basket.jsp" as basket
+participant "Order" as Order
+participant Pay
+participant LogicFacade
+participant OrderMapper
+database "Database" as database
+
+note right of user
+We assume user
+is logged in
+end note
+
+user -> index : user clicks "add to cart"
 index -> Order : [for each cupcake] AddToOrder()
 Order -> index : redirect (msg "added to basket")
+index -> user : display msg
+user -> index : user clicks "show basket"
 
 index -> basket : ShowBasket()
 basket -> Pay : Pay()
@@ -14,5 +31,6 @@ OrderMapper -> database : saves order
 OrderMapper -> LogicFacade : return
 LogicFacade -> Pay : return
 Pay -> index : redirect (msg "order placed")
+index -> user : display msg
 
 @enduml

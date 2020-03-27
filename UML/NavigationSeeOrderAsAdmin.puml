@@ -5,9 +5,10 @@ State "index.jsp" as index
 State "admin_orders.jsp" as orders
 State "vieworder.jsp" as vieworder
 
-[*] --> index
+[*] -> index
 index --> orders : if user is admin
 orders --> orders : search for user
 orders --> vieworder : click view button
+vieworder -> [*]
 
 @enduml

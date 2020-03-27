@@ -2,6 +2,7 @@
 class OlskerCupcakes
 class Cupcake {
     {field} Price
+    {field} Amount
 }
 class Order {
     {field} Price
@@ -38,8 +39,8 @@ Userlist "1" -- "*" User : contains
 Order "*" -- "1" User : has
 
 OlskerCupcakes "1" -- "1" Menucard : has
-Menucard "1" - "1" Bottom : contains
-Menucard "1" - "1" Top : contains
+Menucard "1" - "*" Bottom : contains
+Menucard "1" - "*" Top : contains
 
 /' class LoginFunction
 class RegisterFunction

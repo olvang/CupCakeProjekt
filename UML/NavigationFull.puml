@@ -1,0 +1,89 @@
+@startuml
+
+Title Olsker Cupcakes
+State "index.jsp" as index
+
+
+
+
+
+
+[*] -> index
+index -> LoggingIn: click login in header
+index -> PlacingOrder : click basket icon
+index ---> Orders : click my orders
+
+'login'
+state LoggingIn {
+    State "login.jsp" as login
+    [*] -> login
+    login --> LoggedIn : email and pw OK
+    login --> login : email or pw not OK
+    LoggedIn -> index
+
+    note right of LoggedIn
+    Email and role
+    stored in session
+    end note
+
+    note left of login
+    login page contains
+    register form as well.
+    end note
+}
+
+'place order'
+state PlacingOrder {
+    State "basket.jsp" as basket
+    State "Pay.execute()" as pay
+
+    index -> index : AddToOrder()
+    [*] -> basket
+    basket --> pay
+    pay --> index : if user is logged in
+    pay -> LoggingIn : if user is not logged in
+}
+
+'myorders'
+state Orders {
+    State "myorders.jsp" as myorders
+    State "vieworder.jsp" as vieworder
+
+    [*] -> myorders
+    myorders --> vieworder
+    vieworder -> myorders
+    vieworder -> index : invalid permissions
+}
+
+'admin'
+state AdminPages {
+    State "admin_dash.jsp" as admindash
+    State "admin_customers.jsp" as admincustomers
+    State "admin_orders.jsp" as adminorders
+
+    note bottom of admindash
+    admin pages only
+    visible if user is admin
+    end note
+
+    note bottom of admindash
+    Each admin page has a
+    link in header
+    end note
+
+    [*] --> admindash
+    [*] -> admincustomers
+    [*] -> adminorders
+    index ---> AdminPages
+    AdminPages -> index : if user is not admin
+    admindash -> adminorders
+    admindash -> admincustomers
+    admincustomers -> admincustomers : edit
+    adminorders --> vieworder
+    vieworder -> adminorders
+}
+
+
+
+
+@enduml
