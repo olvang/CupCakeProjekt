@@ -29,7 +29,7 @@ public class ViewOrder extends Command {
                 for (int i = 0; i < orderlines.size(); i++) {
                     cupcakeAmount += orderlines.get(i).getAmount();
                 }
-                session.setAttribute("cupcakeTotalAmount", cupcakeAmount);
+                request.setAttribute("cupcakeTotalAmount", cupcakeAmount);
                 request.setAttribute("order", order);
                 request.setAttribute("orderlines", orderlines);
 

@@ -45,7 +45,7 @@
                                 <c:choose>
                                     <c:when test="${requestScope.IDToEdit == null}">
 
-                                        <c:forEach var="user" items="${sessionScope.users}">
+                                        <c:forEach var="user" items="${requestScope.users}">
                                             <tr>
                                                 <!-- first user.email is used for searching while editing, not visible to user -->
                                                 <td>${user.email}</td>
@@ -67,7 +67,7 @@
                                         </c:forEach>
                                     </c:when>
                                     <c:otherwise>
-                                        <c:forEach var="user" items="${sessionScope.users}" varStatus="count">
+                                        <c:forEach var="user" items="${requestScope.users}" varStatus="count">
                                             <tr>
                                                 <c:choose>
                                                     <c:when test="${user.id == requestScope.IDToEdit}">

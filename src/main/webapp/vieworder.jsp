@@ -111,7 +111,7 @@
 
                         <div class="d-flex flex-row justify-content-end align-items-center" style="height: 50px;">
                             <div class="p-4 ">
-                                <h6><b>Antal Cupcakes:</b> ${cupcakeTotalAmount}</h6>
+                                <h6><b>Antal Cupcakes:</b> ${requestScope.cupcakeTotalAmount}</h6>
                             </div>
                         </div>
                     </td>

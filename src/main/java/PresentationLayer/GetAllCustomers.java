@@ -25,7 +25,7 @@ public class GetAllCustomers extends Command{
             request.setAttribute("adminalert", "Du har ikke tilladelse til at se denne side.");
             return "index";
         }
-        session.setAttribute("users", users);
+        request.setAttribute("users", users);
         return "WEB-INF/admin_customers";
     }
 }
