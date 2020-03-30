@@ -16,8 +16,15 @@ LF -> usermapper : login(email, password)
 usermapper -> database: executeQuery()
 database -> usermapper: resultset
 usermapper -> usermapper: validate resultset
+
 usermapper -> LF : return user
 LF -> Login : return user
 Login -> index : logged in
 index -> user : Welcome
+
+
+usermapper -> LF : error: return null
+LF -> Login : return null
+Login -> login : error message
+login -> user : "User does not exist"
 @enduml
