@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class UpdateUser extends Command{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response)  {
+    String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
         HttpSession session = request.getSession();
 
         String email = request.getParameter("editedEmail");
@@ -34,14 +34,16 @@ public class UpdateUser extends Command{
             return "index";
         }
 
-        ArrayList<User> users = (ArrayList<User>) session.getAttribute("users");
+        ArrayList<User> users = LogicFacade.getAllCustomers();
         users.get(count).setBalance(balance);
         users.get(count).setEmail(email);
+        request.setAttribute("users", users);
 
         String loggedInUser = ((User) session.getAttribute("user")).getEmail();
         if(user.getEmail().equals(loggedInUser)) {
             session.setAttribute("balance", balance);
         }
+
 
         return "WEB-INF/admin_customers";
     }
